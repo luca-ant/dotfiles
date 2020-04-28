@@ -1,0 +1,166 @@
+snippet beg "begin{} / end{}" b
+\begin{$1}
+	$0
+\end{$1}
+endsnippet
+
+snippet item "begin{itemize} / end{itemize}" b
+\begin{itemize}
+	\item $1
+\end{itemize}
+endsnippet
+
+snippet enum "begin{enumerate} / end{enumerate}" b
+\begin{enumerate}
+	\item $1
+\end{enumerate}
+endsnippet
+
+snippet box "frame around the text with a box" b
+\begin{tcolorbox}[fonttitle=\sffamily\bfseries\large,title=$1,colframe=blue!75!white]
+$2
+\end{tcolorbox}
+endsnippet
+
+snippet defbox "frame around the text with a box" b
+\newenvironment{$1}
+{\begin{tcolorbox}[fonttitle=\sffamily\bfseries\large,title=Remind,colframe=blue!75!white]}
+{\end{tcolorbox}}
+endsnippet
+
+snippet img "image" b
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.3]{$1.png}
+	\caption{$2}
+	\label{fig:$1}
+\end{figure}
+$0
+endsnippet
+
+snippet subimg "subimage" b
+\begin{figure}[H]
+	\centering
+	\subfloat[][Caption 1]{\includegraphics[scale=0.25]{$1.png}\label{fig:$1}}
+	\hspace{5mm}
+	\subfloat[][Caption 2]{\includegraphics[scale=0.25]{$2.png}\label{fig:$2}}
+
+	\caption{$5}
+	\label{fig:$6}
+
+\end{figure}
+$0
+endsnippet
+
+snippet par "paragraph{}" b
+\paragraph{$1}
+endsnippet
+
+snippet ref "ref{fig:}" w
+\ref{fig:$1}
+endsnippet
+
+
+snippet bf "textbf{}" w
+\textbf{$1}
+endsnippet
+
+snippet it "textit{}" w
+\textit{$1}
+endsnippet
+
+snippet ul "ul{}" w
+\ul{$1}
+endsnippet
+
+
+snippet math "inline math" w
+$$1$
+endsnippet
+
+snippet mathl "one line math" w
+$$$1$$
+endsnippet
+
+
+
+
+snippet newtex "latex template" w
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{natbib}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subfig}
+\usepackage{soul}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage[toc,page]{appendix}
+\usepackage{tcolorbox}
+\usepackage[a4paper,top=4cm,bottom=4cm,left=3cm,right=3cm]{geometry}
+
+\usepackage[english]{babel}
+\usepackage{ragged2e} % text allignment
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=black,
+	linktoc=all % 'all' will create links for everything in the TOC
+}
+
+\pagestyle{headings}
+% \setcounter{secnumdepth}{4} % to set the depth of sections
+% \setcounter{tocdepth}{4} % to set the depth of table of content
+
+\graphicspath{{images/}}
+
+\newenvironment{remind}
+{\begin{tcolorbox}[fonttitle=\sffamily\bfseries\large,title=Remind,colframe=blue!75!white]}
+{\end{tcolorbox}}
+
+\begin{document}
+
+\begin{titlepage}
+	\vspace*{\stretch{1.0}}
+	\begin{center}
+		\huge\textbf{..........}\\\\
+		\vspace{2mm}
+		\huge\textbf{..........}\\\\
+		\vspace{5mm}
+		\LARGE{..........}\\\\
+		\vspace{3mm}
+		\Large{..........}\\\\
+		\vspace{3mm}
+		\Large{..........}\\\\
+		\vspace{5mm}
+		\Large{Last revision: 31-12-2019}\\\\
+	\end{center}
+	\vspace*{\stretch{2.0}}
+\end{titlepage}
+
+%\title{Title}
+%\author{Author}
+%\date{October 2019}
+
+%\maketitle
+\tableofcontents
+
+\newpage
+\justify
+\section{Introduction}
+$1
+
+
+\end{document}
+endsnippet
+
+
+
+
+
+
+
+
+

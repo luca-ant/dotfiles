@@ -1,0 +1,8 @@
+snippet wd "working directory" b
+WD=$(dirname "$(realpath "\$0")")
+endsnippet
+
+
+snippet pd "parent directory" b
+WD=$(dirname "\$WD")
+endsnippet

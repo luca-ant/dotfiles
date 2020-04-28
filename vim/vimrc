@@ -1,0 +1,174 @@
+call plug#begin('~/.vim/bundle')
+
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'rafi/awesome-vim-colorschemes'
+"Plug 'tomsik68/vim-crystallite'
+"Plug 'reewr/vim-monokai-phoenix'
+
+Plug 'powerline/powerline'
+Plug 'ryanoasis/vim-devicons'
+
+Plug 'SirVer/ultisnips'
+"Plug 'lervag/vimtex'
+
+"Plug '907th/vim-auto-save'
+
+call plug#end()
+
+"execute pathogen#infect()
+"syntax on
+"filetype plugin indent on
+
+"*"*"*"*"*"*"*"*"*"*"*"*"
+
+"VIM CONFIG
+
+"colorscheme monokai-phoenix
+
+"colorscheme murphy 
+colorscheme OceanicNext
+"colorscheme apprentice
+"colorscheme onedark
+"colorscheme purify
+
+set background=dark
+set t_Co=256
+set nocompatible
+set encoding=utf-8
+set number relativenumber
+set number
+set backspace=indent,eol,start
+set list 
+"set listchars=tab:\|\ ,eol:⏎ " the last character of tab is space!
+"set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
+set listchars=tab:␉·,trail:␠,nbsp:⎵
+"set tabstop=4 shiftwidth=4 
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+set spelllang=it,en_us
+set hlsearch                    "highlight search result
+set incsearch                   "search during typing
+set ignorecase
+set laststatus=2        "always show status bar
+set wrap
+set ruler                   "show cursor's coordinates
+set showcmd                 "command's output to status bar
+set showmode                    "show current mode
+set showmatch                   "highlight matching brackets
+"set noswapfile                 "no more swapfiles
+set undofile                    "enable undo
+set undodir=~/.vim/undodir
+set undolevels=9999
+set autoindent                  "keep indentation
+set smartindent
+set cindent
+set cursorline                 "highlight current line
+set cursorcolumn                 "highlight current column
+set clipboard=unnamedplus
+highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
+
+let python_highlight_all = 1
+
+"remember coursor postion
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+
+"swap keyboard layout
+func SwapKeyLayout()
+    let currentLayout = system("setxkbmap -query | grep layout | awk '{print $2}'")
+    if currentLayout =~ "us"
+        call system("setxkbmap it")
+    else
+        call system("setxkbmap us")
+    endif
+
+endfunc
+"   nmap <C-c> :call SwapKeyLayout()<CR>
+
+
+
+"*"*"*"*"*"*"*"*"*"*"*"*"
+
+"KEY-MAPPINGS (for help type the follow commands)
+":help mapping  :help key-notation  :help map-special-chars
+
+nmap <F2> :NERDTreeToggle<CR>
+inoremap jk <ESC>
+inoremap kj <ESC>
+"inoremap we <ESC>:w<CR>
+
+"CTRL+T open a new tab 
+noremap <C-t> :tabe<CR> 
+
+"save and go to insert mode
+"inoremap ww <C-O>:w<CR>
+
+"allow saving of files as sudo when I forgot to start vim using sudo
+cnoremap W!!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+"command WWW :execute ':silent w !sudo tee % > /dev/null' <bar> :edit!  
+
+
+"*"*"*"*"*"*"*"*"*"*"*"*"
+
+"PLUGIN CONFIG
+
+"AirlineTheme
+
+let g:airline_theme='luna'
+"let g:airline_theme='badwolf'
+
+let g:airline_powerline_fonts = 1   "enable powerline font
+let g:airline#extensions#tabline#enabled = 1    "show tabs if only one is enabled
+let g:airline#extensions#tabline#show_buffers = 1   "enable/disable displaying buffers with a single tab
+let g:airline#extensions#tabline#tab_nr_type = 1    "tab number
+
+"let g:powerline_pycmd="py3"
+
+"*"*"*"*"*"*"*"*"*"*"*"*"
+
+"Syntastic
+
+let g:syntastic_tex_checkers=['chktex']
+
+"*"*"*"*"*"*"*"*"*"*"*"*"
+
+"NERDTree - show file-system
+"command :NERDTree starts NERDTree.
+
+"autostart NERDTree 
+"autocmd vimenter * NERDTree
+
+"close NERDTree whe last file is closed
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
+"*"*"*"*"*"*"*"*"*"*"*"*"
+
+"vimtex
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+let maplocalleader=","
+let g:vimtex_compiler_latexmk = {
+    \ 'build_dir' : 'build',
+    \}
+"*"*"*"*"*"*"*"*"*"*"*"*"
+
+"ultisnips
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsSnippetDirectories=[$HOME . "/.vim/ultisnips"]
+
+"*"*"*"*"*"*"*"*"*"*"*"*"
+
+"autosave
+"let g:auto_save = 1  " enable AutoSave on Vim startup
+

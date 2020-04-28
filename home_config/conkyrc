@@ -1,0 +1,161 @@
+# Set to yes if you want Conky to be forked in the background
+background yes
+
+# Update interval in seconds
+update_interval 1
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 8
+
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 1
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+double_buffer yes
+text_buffer_size 2048
+
+# Add spaces to keep things from moving about?  This only affects certain objects.
+use_spacer right
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 20
+gap_y 20
+
+# Minimum size of text area
+minimum_size 300
+maximum_width 300
+
+
+# Create own window instead of using desktop (required in nautilus)
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_class override
+
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Draw shades?
+draw_shades yes
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+draw_graph_borders no
+
+# Stippled borders?
+stippled_borders 1
+
+# border width
+border_width 1
+
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale yes
+
+# Use Xft?
+use_xft yes
+
+# Xft font when Xft is enabled
+xftfont Bitstream Vera Sans:size=10
+
+# Text alpha when using Xft
+xftalpha 0.5
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# Default colors and also border colors
+default_color white
+default_shade_color black
+default_outline_color white
+# Shades of Gray
+color1 DDDDDD
+color2 AAAAAA
+color3 888888
+color4 2ECC71 # 
+color5 0000FF # Green
+color6 3A5153 # DarkGrey
+
+# Header with base system info
+# stuff after 'TEXT' will be formatted on screen
+
+TEXT
+${font Bitstream Vera Sans:style=Bold:pixelsize=14}${color4}TIME${color6}${hr 2}
+${color}${font Bitstream Vera Sans:size=9}DATE:${alignr}${time %A %d %B %Y}
+${color}${font Bitstream Vera Sans:size=9}TIME:${alignr}${time %T}
+
+${font Bitstream Vera Sans:style=Bold:pixelsize=14}${color4}SYSTEM${color6}${hr 2}
+${color}${font Bitstream Vera Sans:size=9}OS: ${alignr}${execi 10000 awk -F= '/TION/ {print $2}' /etc/lsb-release |sed 's/"//g'} \
+${execi 10000 awk -F= '/EASE=/ {printf $2" "} /NAME/ {print $2}' /etc/lsb-release}
+${color}${font Bitstream Vera Sans:size=9}KERNEL: $alignr$sysname $kernel ($machine)
+${color}${font Bitstream Vera Sans:size=9}UPTIME: $alignr$uptime
+${color}${font Bitstream Vera Sans:size=9}RUNNING PROCESSES: ${alignr}$processes (${color4}$running_processes Executing${color})
+
+${color4}${font Bitstream Vera Sans:style=Bold:pixelsize=14}CPU${color6}${hr 2 }
+${color}${font Bitstream Vera Sans:size=9}FREQUENCY: ${alignr}${freq} MHz
+${color}${font Bitstream Vera Sans:size=9}TEMPERATURE: ${alignr}${acpitemp}°C 
+${cpugraph 20,200,FFFFFF,FFFFFF}    ${alignr}${color}(${cpu}%) 
+${color}1st ${color4}${top name 1}${alignr}${top cpu 1}%
+${color}2nd ${color}${top name 2}${alignr}${top cpu 2}%
+${color}3rd ${color1}${top name 3}${alignr}${top cpu 3}%
+${color}4th ${color2}${top name 4}${alignr}${top cpu 4}%
+${color}5th ${color3}${top name 5}${alignr}${top cpu 5}%
+
+${color4}${font Bitstream Vera Sans:style=Bold:pixelsize=14}MEMORY${color6}${hr 2 }
+${color}${font Bitstream Vera Sans:size=9}$mem / $memmax ($memperc%)
+${color3}${membar 5,200}
+${color}1st ${color4}${top_mem name 1}${alignr}${top_mem mem 1}%
+${color}2nd ${color}${top_mem name 2}${alignr}${top_mem mem 2}%
+${color}3rd ${color1}${top_mem name 3}${alignr}${top_mem mem 3}%
+${color}4th ${color2}${top_mem name 4}${alignr}${top_mem mem 4}%
+${color}5th ${color3}${top_mem name 5}${alignr}${top_mem mem 5}%
+
+${color4}${font Bitstream Vera Sans:style=Bold:pixelsize=14}DISK${color6}${hr 2 }
+${color}${font Bitstream Vera Sans:style=Bold:pixelsize=12}/${font Bitstream Vera Sans:size=8} ${alignr}${fs_used /}/${fs_size /}
+${alignr}${color2}${fs_used_perc /}% ${color3}${fs_bar 5,150 /}
+${color}${font Bitstream Vera Sans:style=Bold:pixelsize=12}/home${font Bitstream Vera Sans:size=8} ${alignr}${fs_used /home}/${fs_size /home}
+${alignr}${color2}${fs_used_perc /home}% ${color3}${fs_bar 5,150 /home}
+${color}${font Bitstream Vera Sans:style=Bold:pixelsize=12}/media/luca/DATA${font Bitstream Vera Sans:size=8} ${alignr}${fs_used /media/luca/DATA}/${fs_size /media/luca/DATA}
+${alignr}${color2}${fs_used_perc /media/luca/DATA}% ${color3}${fs_bar 5,150 /media/luca/DATA}
+
+${color4}${font Bitstream Vera Sans:style=Bold:pixelsize=14}NETWORK ${color6}${hr 2 }
+${font Bitstream Vera Sans:style:Bold:pixelsize=10}${color}WIRELESS:${font Bitstream Vera Sans:size=7}
+${font Bitstream Vera Sans:size=8}${color}SSID: ${alignr} ${color}${wireless_essid wlp2s0}
+${font Bitstream Vera Sans:size=8}${color}SIGNAL STRENGTH: ${alignr} ${color1}${wireless_link_qual wlp2s0}%
+${font Bitstream Vera Sans:size=8}${color}IP: ${alignr} ${color}${addr wlp2s0}
+#${font Bitstream Vera Sans:size=8}${color}MAC: ${alignr} ${color}${wireless_ap wlp2s0}
+
+${color}${font Bitstream Vera Sans:style=Bold:pixelsize=11}DOWN SPEED:${font Bitstream Vera Sans:size=7} ${alignr} ${color}${downspeedf wlp2s0} kb/s 
+${color BBCCDD}${downspeedgraph wlp2s0 20,290 00FF00 00FF00}
+${color}TOTAL DOWN ${alignr}${totaldown wlp2s0} 
+
+${color}${font Bitstream Vera Sans:style=Bold:pixelsize=11}UP SPEED:${font Bitstream Vera Sans:size=7} ${alignr} ${color}${upspeedf wlp2s0} kb/s 
+${color BBCCDD}${upspeedgraph wlp2s0 20,290 0000FF 0000FF}
+${color}TOTAL UP ${alignr}${totalup wlp2s0}
+#${color3}${hr 1}
+#${font Bitstream Vera Sans:style:Bold:pixelsize=10}${color}LAN:${font Bitstream Vera Sans:size=7}
+#${font Bitstream Vera Sans:size=8}${color}IP: ${alignr} ${color}${addr enp0s20f0u3u1}
+
+#${color}${font Bitstream Vera Sans:style=Bold:pixelsize=11}DOWN SPEED:${font Bitstream Vera Sans:size=7} ${alignr} ${color}${downspeedf enp0s20f0u3u1} kb/s 
+#${color BBCCDD}${downspeedgraph enp0s20f0u3u1 20,290 00FF00 00FF00}
+#${color}TOTAL DOWN ${alignr}${totaldown enp0s20f0u3u1} 
+
+#${color}${font Bitstream Vera Sans:style=Bold:pixelsize=11}UP SPEED:${font Bitstream Vera Sans:size=7} ${alignr} ${color}${upspeedf enp0s20f0u3u1} kb/s 
+#${color BBCCDD}${upspeedgraph enp0s20f0u3u1 20,290 0000FF 0000FF}
+#${color}TOTAL UP ${alignr}${totalup enp0s20f0u3u1}
+
