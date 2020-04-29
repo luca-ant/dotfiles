@@ -10,7 +10,6 @@ export BROWSER='/usr/bin/google-chrome-stable'
 export TERMINAL=$(which termite)
 export EDITOR='vim'
 
-
   # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
