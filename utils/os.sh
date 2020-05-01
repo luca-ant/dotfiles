@@ -7,13 +7,13 @@ ECHO_GREEN='echo -en \033[32m'
 ECHO_BLUE='echo -en \033[36m'
 ECHO_WHITE='echo -en \033[37m'
 
-UBUNTU=$(grep -e "^NAME" /etc/os-release 2>/dev/null| grep -io Ubuntu | head -1)
-DEBIAN=$(grep -e "^NAME" /etc/os-release 2>/dev/null| grep -io Debian | head -1)
-MANJARO=$(grep -e "^NAME" /etc/os-release 2>/dev/null| grep -io Manjaro | head -1)
-ARCH=$(grep -e "^NAME" /etc/os-release 2>/dev/null| grep -io Arch | head -1)
+UBUNTU=$(grep -e "^NAME" /etc/os-release 2>/dev/null | grep -io Ubuntu | head -1)
+DEBIAN=$(grep -e "^NAME" /etc/os-release 2>/dev/null | grep -io Debian | head -1)
+MANJARO=$(grep -e "^NAME" /etc/os-release 2>/dev/null | grep -io Manjaro | head -1)
+ARCH=$(grep -e "^NAME" /etc/os-release 2>/dev/null | grep -io Arch | head -1)
 
-DOTFILES_URL="https://github.com/luca-ant/_dotfiles.git"
-DOTFILES_ROOT="/home/$USER/_dotfiles"
+DOTFILES_URL="https://github.com/luca-ant/dotfiles.git"
+DOTFILES_ROOT="/home/$USER/dotfiles"
 
 run_command(){
     $ECHO_BLUE
@@ -30,7 +30,7 @@ run_command(){
 }
 
 
-update_packet(){
+update_packets(){
 
     if [ $MANJARO ] || [ $ARCH ]
     then
