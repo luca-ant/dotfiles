@@ -168,7 +168,7 @@ bar {
 
 # Audio controls
 exec --no-startup-id volumeicon
-exec --no-startup-id pulseaudio
+exec --no-startup-id pulseaudio --start
 exec --no-startup-id pa-applet
 
 # Screen brightness controls
