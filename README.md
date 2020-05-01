@@ -1,5 +1,5 @@
-# laptop
-My laptop configurations.
+# dotfiles
+My dotfiles and basic configurations.
 
 ## Getting started
 * Download Arch image from [here](https://www.archlinux.org/download/), Manjaro i3 from [here](https://manjaro.org/download/community/i3/) or Ubuntu minimal from [here](https://wiki.ubuntu-it.org/Installazione/CdMinimale)
@@ -11,8 +11,8 @@ My laptop configurations.
 ### **START RESTORE SYSTEM**
 
 ```
-git clone https://github.com/luca-ant/laptop.git
-cd laptop
+git clone https://github.com/luca-ant/dotfiles.git
+cd dotfiles
 ./start.sh
 ```
 
@@ -29,12 +29,12 @@ ssh-add ~/.ssh/id_rsa
 
 * Run this command to change from HTTPS remote origin to SSH remote origin. 
 ```
-git remote set-url origin git@github.com:luca-ant/laptop.git
+git remote set-url origin git@github.com:luca-ant/dotfiles.git
 ```
 
 * Run this command to restore HTTPS remote origin. 
 ```
-git remote set-url origin https://github.com/luca-ant/laptop.git
+git remote set-url origin https://github.com/luca-ant/dotfiles.git
 ```
 
 
