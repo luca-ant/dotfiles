@@ -7,6 +7,8 @@ source "$WD/utils/check_user.sh"
 source "$WD/utils/os.sh"
 #source "$WD/utils/check_args.sh"
 
+run_command echo "[-] RUNNING TASK $0..."
+
 usage(){
     run_command echo "Usage: $0 [ install | remove ]"
 }
@@ -37,5 +39,6 @@ else
     exit 3
 fi
 
+run_command echo "[+] RUNNING TASK $0... DONE!"
 
 
