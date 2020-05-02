@@ -9,6 +9,6 @@ LOGFILE="$WD/output.log"
 
 echo > "$LOGFILE"
 
-"$WD/tasks/upgrade_packets.sh" install | tee -a $LOGFILE
-"$WD/tasks/vim.sh" install | tee -a $LOGFILE
-"$WD/tasks/zsh.sh" install | tee -a $LOGFILE
+"$WD/tasks/upgrade_packets.sh" install 2>&1 | tee -a $LOGFILE
+"$WD/tasks/vim.sh" install 2>&1 | tee -a $LOGFILE
+"$WD/tasks/zsh.sh" install 2>&1 | tee -a $LOGFILE

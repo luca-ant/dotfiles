@@ -2,7 +2,7 @@
 My dotfiles and basic configurations.
 
 ## Getting started
-* Download Arch image from [here](https://www.archlinux.org/download/) or Ubuntu minimal from [here](https://wiki.ubuntu-it.org/Installazione/CdMinimale)
+* Download Arch image from [here](https://www.archlinux.org/download/), Manjaro i3 from [here](https://manjaro.org/download/community/i3/) or Ubuntu minimal from [here](https://wiki.ubuntu-it.org/Installazione/CdMinimale)
 * Create a live USB.
 * Boot your computer from USB and install the system.
 
