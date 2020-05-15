@@ -32,7 +32,7 @@ then
 elif [ $1 == "remove" ]
 then
 
-    run_command echo "Nothing to do!"
+    run_command echo "NOTHING TO DO!"
 
 else
     usage
