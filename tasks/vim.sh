@@ -36,8 +36,8 @@ then
     run_command wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -O ~/.vim/autoload/plug.vim
     run_command wget https://tpo.pe/pathogen.vim -O ~/.vim/autoload/pathogen.vim
 
-    run_command ln -sf "$WD/vim/vimrc" ~/.vimrc
-    run_command ln -sf "$WD/vim/ultisnips" ~/.vim/ultisnips
+    run_command ln -sf "$WD/home/vimrc" ~/.vimrc
+    run_command ln -sf "$WD/home/vim/ultisnips" ~/.vim/ultisnips
 
     echo | vim +PlugInstall +qa
 

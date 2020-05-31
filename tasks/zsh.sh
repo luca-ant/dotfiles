@@ -33,8 +33,8 @@ then
 
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | grep -v 'exec zsh -l')"
 
-    run_command ln -sf "$WD/zsh/zshrc" ~/.zshrc
-    run_command ln -sf "$WD/zsh/zprofile" ~/.zprofile
+    run_command ln -sf "$WD/home/zshrc" ~/.zshrc
+    run_command ln -sf "$WD/home/zprofile" ~/.zprofile
 
     run_command chsh -s /usr/bin/zsh
 

@@ -27,7 +27,7 @@ primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-[bar/mybar]
+[bar/bottom]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
@@ -49,16 +49,18 @@ line-color = #f00
 #border-color = #00000000
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-0 = fixed:pixelsize=12;1
+font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
+font-2 = siji:pixelsize=12;1
+font-3 = Weather Icons:size=14;1
 
-modules-left = bspwm i3
+
+modules-left = i3 bspwm
 modules-center = xwindow
 modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
@@ -86,7 +88,7 @@ label = %title:0:30:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
-blacklist-0 = num lock
+; blacklist-0 = num lock
 
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
@@ -105,10 +107,14 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
+mount-1 = /home
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
+;label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %free% free in %{F#0a81f5}%mountpoint%%{F-}
+;label-unmounted = %mountpoint% not mounted
+label-unmounted = (%mountpoint%)
 label-unmounted-foreground = ${colors.foreground-alt}
+
 
 [module/bspwm]
 type = internal/bspwm
@@ -130,7 +136,7 @@ label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 
 ; Separator in between workspaces
-; label-separator = |
+;label-separator = |
 
 [module/i3]
 type = internal/i3
@@ -167,18 +173,25 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
 ; Separator in between workspaces
-; label-separator = |
+;label-separator = |
 
 
 [module/mpd]
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+icon-play = ⏵
+icon-pause = ⏸
+icon-stop = ⏹
+icon-prev = ⏮
+icon-next = ⏭
+icon-seekb = 
+icon-seekf = 
+icon-random = 列
+icon-repeat = 凌
+icon-repeatone = 綾
+icon-single = 綾
+icon-consume = ✀
 
 label-song-maxlen = 25
 label-song-ellipsis = true
@@ -187,18 +200,24 @@ label-song-ellipsis = true
 type = internal/xbacklight
 
 format = <label> <bar>
-label = BL
+label =  %percentage%
+;label = BL
 
-bar-width = 10
-bar-indicator = |
-bar-indicator-foreground = #fff
+bar-width = 7
+bar-indicator =
+bar-indicator-foreground = ${xrdb:foreground:#fff}
+;bar-indicator-foreground = #fff
 bar-indicator-font = 2
-bar-fill = ─
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = ─
-bar-empty-font = 2
+; bar-fill = ─
+bar-fill = █
+bar-fill-font = 3
+bar-fill-foreground = ${xrdb:color4:#9f78e1}
+;bar-fill-foreground = #9f78e1
+; bar-empty = ─
+bar-empty = ▒
+bar-empty-font = 3
 bar-empty-foreground = ${colors.foreground-alt}
+
 
 [module/backlight-acpi]
 inherit = module/xbacklight
