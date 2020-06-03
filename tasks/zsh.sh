@@ -28,7 +28,7 @@ fi
 if [ $1 == "install" ] 
 
 then
-    install_packet zsh curl
+    install_packet zsh curl git
     run_command rm -rf ~/.oh-my-zsh
 
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | grep -v 'exec zsh -l')"
