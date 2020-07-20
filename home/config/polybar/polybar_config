@@ -60,7 +60,8 @@ font-2 = siji:pixelsize=12;1
 font-3 = Weather Icons:size=14;1
 
 
-modules-left = i3 bspwm
+#modules-left = i3 bspwm
+modules-left = i3
 modules-center = xwindow
 modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
