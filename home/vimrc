@@ -9,8 +9,8 @@ Plug 'rafi/awesome-vim-colorschemes'
 "Plug 'tomsik68/vim-crystallite'
 "Plug 'reewr/vim-monokai-phoenix'
 
-Plug 'powerline/powerline'
-Plug 'ryanoasis/vim-devicons'
+"Plug 'powerline/powerline'
+"Plug 'ryanoasis/vim-devicons'
 
 Plug 'SirVer/ultisnips'
 "Plug 'lervag/vimtex'
@@ -38,7 +38,7 @@ colorscheme OceanicNext
 set background=dark
 set t_Co=256
 set nocompatible
-set encoding=utf-8
+set encoding=UTF-8
 set number relativenumber
 set number
 set backspace=indent,eol,start
