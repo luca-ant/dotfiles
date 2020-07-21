@@ -90,6 +90,8 @@ bindsym $mod+o exec --no-startup-id blurlock
 
 # Shortcut start applications
 bindsym $mod+n exec nemo
+#set $browser  $( echo $BROWSER )
+#bindsym $mod+c exec $browser
 bindsym $mod+c exec google-chrome-stable
 
 # Autostart applications

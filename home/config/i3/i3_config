@@ -212,7 +212,9 @@ bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 # Shortcut start applications
 bindsym $mod+n exec nemo
 #bindsym $mod+c exec chromium-browser
-bindsym $mod+c exec google-chrome
+set $browser  $( echo $BROWSER )
+bindsym $mod+c exec $browser
+#bindsym $mod+c exec google-chrome
 
 
 # Autostart applications
