@@ -18,14 +18,38 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
+background = #252525
+background-alt = #252525
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+foreground = #dcdccc
+foreground-alt = #dcdccc
+
+# robin egg
+primary = #00cccc
+# Blue
+secondary = #409fff
+# Fucsia
+alert = #b300ff
+
+# Red
+red  = #dc322f
+# Green
+green = #009874
+# Orange
+orange = #ffa500
+# Blue
+blue  = #409fff
+# Purple
+purple = #6c71c4
+# Lavender
+lavander = #b57edc
+# Teal
+teal  = #16a085
+# Robin egg
+robin = #00cccc
+
+
+
 
 [bar/bottom]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -67,10 +91,13 @@ modules-right = filesystem xbacklight alsa pulseaudio xkeyboard memory cpu wlan 
 
 tray-position = right
 tray-padding = 2
-;tray-background = #0063ff
+tray-detached = false
+tray-maxsize = 20
+tray-background = ${colors.background}
+tray-scale = 1.0
 
 ;wm-restack = bspwm
-;wm-restack = i3
+wm-restack = i3
 
 ;override-redirect = true
 
@@ -250,11 +277,11 @@ format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
 label-connected = %essid%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+#format-disconnected =
+format-disconnected = <label-disconnected>
+format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-0 = 
 ramp-signal-1 = 
