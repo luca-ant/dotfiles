@@ -1,24 +1,24 @@
 [options]
-#allow_bold = true
+allow_bold = true
 #audible_bell = false
-#bold_is_bright = true
+bold_is_bright = true
 #cell_height_scale = 1.0
 #cell_width_scale = 1.0
-#clickable_url = true
+clickable_url = true
 #dynamic_title = true
-#font = Monospace 16
+font = Monospace 14
 font = Roboto Mono 14
-#fullscreen = true
+fullscreen = true
 #icon_name = terminal
 #mouse_autohide = false
 #scroll_on_output = false
 #scroll_on_keystroke = true
 # Length of the scrollback buffer, 0 disabled the scrollback buffer
 # and setting it to a negative value means "infinite scrollback"
-scrollback_lines = 10000
+scrollback_lines = -1
 #search_wrap = true
 #urgent_on_bell = true
-#hyperlinks = false
+hyperlinks = false
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
 #browser = xdg-open
@@ -47,34 +47,78 @@ scrollback_lines = 10000
 #cursor = #dcdccc
 #cursor_foreground = #dcdccc
 
-#foreground = #dcdccc
-#foreground_bold = #ffffff
+foreground = #dcdccc
+foreground_bold = #ffffff
 #background = #3f3f3f
+background = #252525
 
 # 20% background transparency (requires a compositor)
 #background = rgba(63, 63, 63, 0.8)
 
 # If unset, will reverse foreground and background
-highlight = #2f2f2f
+highlight = #5a6166
 
 # Colors from color0 to color254 can be set
 #color0 = #3f3f3f
+#color0 = #252525
+#color1 = #705050
+#color2 = #60b48a
+#color3 = #dfaf8f
+#color4 = #506070
+#color5 = #dc8cc3
+#color6 = #8cd0d3
+#color7 = #dcdccc
+#color8 = #709080
+#color9 = #dca3a3
+#color10 = #c3bf9f
+#color11 = #f0dfaf
+#color12 = #94bff3
+#color13 = #ec93d3
+#color14 = #93e0e3
+#color15 = #ffffff
+
+# Background color
 color0 = #252525
-color1 = #705050
-color2 = #60b48a
-color3 = #dfaf8f
-color4 = #506070
-color5 = #dc8cc3
-color6 = #8cd0d3
-color7 = #dcdccc
-color8 = #709080
-color9 = #dca3a3
-color10 = #c3bf9f
-color11 = #f0dfaf
-color12 = #94bff3
-color13 = #ec93d3
-color14 = #93e0e3
-color15 = #ffffff
+
+color8  = #657b83
+color7  = #93a1a1
+color15 = #fdf6e3
+
+# Red
+color1  = #dc322f
+color9  = #dc322f
+
+# Green
+color2  = #009874
+color10 = #009874
+
+# Orange
+color3  = #ffa500
+color11 = #ffa500
+
+# Blue
+color4  = #409fff
+color12 = #409fff
+
+#color4  = #1e90ff
+#color12 = #1e90ff
+
+# Purple
+#color5  = #6c71c4
+#color13 = #6c71c4
+
+# Lavender
+color5  = #b57edc
+color13 = #b57edc
+
+# Teal
+#color6  = #16a085
+#color14 = #16a085
+
+# Robin egg
+color6  = #00cccc
+color14 = #00cccc
+
 
 [hints]
 #font = Monospace 12
