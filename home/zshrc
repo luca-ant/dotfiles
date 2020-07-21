@@ -16,7 +16,7 @@ then
 elif which google-chrome > /dev/null 2>&1
 then
     export BROWSER=$(which google-chrome)
-elif which firefox 
+elif which firefox > /dev/null 2>&1
 then
     export BROWSER=$(which firefox)
 fi
