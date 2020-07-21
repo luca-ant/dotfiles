@@ -6,7 +6,9 @@ bold_is_bright = true
 #cell_width_scale = 1.0
 clickable_url = true
 #dynamic_title = true
-font = Monospace 14
+#font = Monospace 14
+font = Noto 14
+#font = DejaVu Mono 14
 font = Roboto Mono 14
 fullscreen = true
 #icon_name = terminal
@@ -44,8 +46,8 @@ scrollback_lines = -1
 [colors]
 # If both of these are unset, cursor falls back to the foreground color,
 # and cursor_foreground falls back to the background color.
-#cursor = #dcdccc
-#cursor_foreground = #dcdccc
+cursor = #dcdccc
+cursor_foreground = #dcdccc
 
 foreground = #dcdccc
 foreground_bold = #ffffff
