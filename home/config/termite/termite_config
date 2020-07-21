@@ -18,7 +18,7 @@ fullscreen = true
 scrollback_lines = -1
 #search_wrap = true
 #urgent_on_bell = true
-hyperlinks = false
+#hyperlinks = false
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
 #browser = xdg-open
