@@ -187,27 +187,33 @@ bar {
 
 ## MY CONFIG
 
-# Audio controls
-#exec --no-startup-id volumeicon
-##exec --no-startup-id pulseaudio --start
-#exec --no-startup-id pa-applet
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 
 # Keyboard layout
-bindsym $mod+Ctrl+i exec --no-startup-id "setxkbmap it -option '' ; notify-send 'keyboard it'"
-bindsym $mod+Ctrl+u exec --no-startup-id "setxkbmap us -option caps:escape ; notify-send 'keyboard us'"
+bindsym $mod+Ctrl+i exec --no-startup-id "setxkbmap it -option '' ; notify-send 'Keyboard IT'"
+bindsym $mod+Ctrl+u exec --no-startup-id "setxkbmap us -option caps:escape ; notify-send 'Keyboard US'"
 
 
 # Start Applications
+#exec --no-startup-id volumeicon
+##exec --no-startup-id pulseaudio --start
 bindsym $mod+o exec --no-startup-id i3lock -c 000000
 
 # Screenshot
-bindsym Print exec --no-startup-id i3-scrot
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+#bindsym Print exec --no-startup-id i3-scrot
+bindsym Print exec --no-startup-id "source ~/.config/i3-scrot.conf ; cd $scrot_dir ; scrot && notify-send 'Screenshot of screen has been saved'"
+#bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
+bindsym $mod+Print exec --no-startup-id "source ~/.config/i3-scrot.conf ; cd $scrot_dir ; scrot -u && notify-send 'Screenshot of windows has been saved'"
+#bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
+bindsym $mod+Shift+Print exec --no-startup-id "source ~/.config/i3-scrot.conf ; cd $scrot_dir ; notify-send 'Select an area for the screenshot' ; scrot -s -f && notify-send 'Screenshot of area has been saved'"
 
 # Shortcut start applications
 bindsym $mod+n exec nemo

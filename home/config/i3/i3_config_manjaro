@@ -82,8 +82,8 @@ bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # Keyboard layout
-bindsym $mod+Ctrl+i exec --no-startup-id "setxkbmap it -option '' ; notify-send 'keyboard it'"
-bindsym $mod+Ctrl+u exec --no-startup-id "setxkbmap us -option caps:escape ; notify-send 'keyboard us'"
+bindsym $mod+Ctrl+i exec --no-startup-id "setxkbmap it -option '' ; notify-send 'Keyboard IT'"
+bindsym $mod+Ctrl+u exec --no-startup-id "setxkbmap us -option caps:escape ; notify-send 'Keyboard US'"
 
 # Lock screen
 bindsym $mod+o exec --no-startup-id blurlock
