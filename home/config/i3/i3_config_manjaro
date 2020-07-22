@@ -111,7 +111,7 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
 #exec --no-startup-id conky -c ~/.conkyrc
-exec --no-startup-id redshift -O 3000 
+exec --no-startup-id redshift -P -O 2500
 exec --no-startup-id nitrogen --set-tiled ~/background.jpg
 #exec --no-startup-id feh --no-fehbg --bg-scale ~/background.jpg
 #exec --no-startup-id megasync
