@@ -8,8 +8,8 @@ clickable_url = true
 #dynamic_title = true
 
 #font = Monospace 14
-font = Noto Color Emoji 14
-#font = Noto 14
+font = Noto 14
+#font = Noto Color Emoji 14
 #font = DejaVu Mono 14
 font = Roboto Mono 14
 
