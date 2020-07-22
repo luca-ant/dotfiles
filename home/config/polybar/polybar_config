@@ -78,10 +78,12 @@ padding-right = 0
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=12;1
-font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
-font-2 = siji:pixelsize=12;1
-font-3 = Weather Icons:size=14;1
+font-0 = Noto:pixelsize=14;1
+font-1 = Roboto Mono:size=14;1
+font-2 = siji:pixelsize=14;1
+#font-0 = fixed:pixelsize=12;1
+#font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
+#font-2 = Weather Icons:size=14;1
 
 
 #modules-left = i3 bspwm
@@ -97,7 +99,7 @@ tray-background = ${colors.background}
 tray-scale = 1.0
 
 ;wm-restack = bspwm
-wm-restack = i3
+#wm-restack = i3
 
 ;override-redirect = true
 
