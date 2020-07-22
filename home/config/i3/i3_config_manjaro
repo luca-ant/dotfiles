@@ -120,6 +120,7 @@ exec --no-startup-id udiskie --smart-tray
 
 set $id_touchpad  $( xinput list | grep -i touchpad | awk -F "id=" {'print $2'} | cut -f1 )
 exec_always --no-startup-id xinput set-prop $id_touchpad "libinput Natural Scrolling Enabled" 1
+exec_always --no-startup-id xinput set-prop $id_touchpad "libinput Tapping Enabled" 1
 exec_always --no-startup-id setxkbmap us -option caps:escape
 
 # focus_follows_mouse no
