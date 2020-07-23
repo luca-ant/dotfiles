@@ -88,12 +88,15 @@ color8  = #657b83
 color7  = #93a1a1
 color15 = #fdf6e3
 
+# first color is background
 # Red
 color1  = #dc322f
 color9  = #dc322f
 
-# Green
-color2  = #009874
+# Pale green
+color2  = #98FB98
+
+#Emerald
 color10 = #009874
 
 # Orange
