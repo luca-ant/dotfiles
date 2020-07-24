@@ -9,9 +9,9 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-# $mod -> Alt
-#set $mod Mod1
-# $mod -> Super
+# Mod1 -> Alt
+# Mod4 -> Super
+set $alt Mod1
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
@@ -24,9 +24,9 @@ font pango:Roboto Mono 12
 #font pango:DejaVu Sans Mono 8
 
 # configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 1
+default_border pixel 2
 #new_window none
-new_float normal
+default_floating_border normal
 
 # hide borders
 hide_edge_borders none
@@ -199,14 +199,20 @@ bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 
 # Keyboard layout
-bindsym $mod+Ctrl+i exec --no-startup-id "setxkbmap it -option '' ; notify-send 'Keyboard IT'"
-bindsym $mod+Ctrl+u exec --no-startup-id "setxkbmap us -option caps:escape ; notify-send 'Keyboard US'"
+bindsym $alt+i exec --no-startup-id "setxkbmap it -option '' ; notify-send 'Keyboard IT'"
+bindsym $alt+u exec --no-startup-id "setxkbmap us -option caps:escape ; notify-send 'Keyboard US'"
 
 
 # Start Applications
 #exec --no-startup-id volumeicon
 ##exec --no-startup-id pulseaudio --start
 bindsym $mod+o exec --no-startup-id i3lock -c 000000
+bindsym $alt+l exec --no-startup-id i3lock -c 000000
+
+bindsym $mod+n exec nemo
+#bindsym $mod+c exec chromium-browser
+bindsym $mod+c exec $BROWSER
+#bindsym $mod+c exec google-chrome
 
 # Screenshot
 #bindsym Print exec --no-startup-id i3-scrot
@@ -216,18 +222,10 @@ bindsym $mod+Print exec --no-startup-id "source ~/.config/i3-scrot.conf ; cd $sc
 #bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Shift+Print exec --no-startup-id "source ~/.config/i3-scrot.conf ; cd $scrot_dir ; notify-send 'Select an area for the screenshot' ; scrot -s -f && notify-send 'Screenshot of area has been saved'"
 
-# Shortcut start applications
-bindsym $mod+n exec nemo
-#bindsym $mod+c exec chromium-browser
-set $browser  $( echo $BROWSER )
-bindsym $mod+c exec $browser
-#bindsym $mod+c exec google-chrome
-
-
 # Autostart applications
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
-exec --no-startup-id xautolock -time 10 -locker "i3lock -c 000000"
+exec --no-startup-id xautolock -time 10 -locker "i3lock -c 131313"
 #exec --no-startup-id conky -c ~/.conkyrc
 exec --no-startup-id redshift -P -O 2500 -b 1.0
 exec --no-startup-id nitrogen --set-tiled ~/background.jpg

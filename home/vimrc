@@ -35,7 +35,7 @@ colorscheme OceanicNext
 "colorscheme onedark
 "colorscheme purify
 
-set background=dark
+"set background=dark
 set t_Co=256
 set nocompatible
 set encoding=UTF-8
