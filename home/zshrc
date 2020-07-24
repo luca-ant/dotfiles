@@ -1,7 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME"/.oh-my-zsh"
 export PATH=$PATH":/snap/bin"
@@ -22,6 +21,13 @@ elif which firefox > /dev/null 2>&1
 then
     export BROWSER=$(which firefox)
 fi
+
+DEFAULT_INTERFACE=$(ip route | grep '^default' | awk '{print $5}' | head -n1)
+ETH_INTERFACE=$(cat /proc/net/dev | grep -e "^en" | cut -d: -f1 | head -n1)
+WLAN_INTERFACE=$(cat /proc/net/dev | grep -e "^wl" | cut -d: -f1 | head -n1)
+export DEFAULT_INTERFACE
+export ETH_INTERFACE
+export WLAN_INTERFACE
 
   # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -94,7 +100,7 @@ plugins=(
   python
   pip
   sudo
-  vi-mode
+#  vi-mode
   extract
   command-not-found
   colored-man-pages
