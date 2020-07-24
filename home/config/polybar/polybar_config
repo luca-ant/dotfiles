@@ -310,6 +310,7 @@ bar-empty-foreground = ${colors.lavender}
 inherit = module/xbacklight
 type = internal/backlight
 card = intel_backlight
+;card = acpi_video0
 
 [module/cpu]
 type = internal/cpu
