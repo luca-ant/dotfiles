@@ -55,6 +55,8 @@ foreground = #dcdccc
 foreground_bold = #ffffff
 #background = #3f3f3f
 background = #252525
+background = #0c0c0c
+background = #131313
 
 # 20% background transparency (requires a compositor)
 #background = rgba(63, 63, 63, 0.8)

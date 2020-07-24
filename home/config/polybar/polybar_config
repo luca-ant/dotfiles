@@ -18,8 +18,9 @@
 
 [colors]
 ;background = #252525
-background = #000000
-background-alt = #252525
+;background = #0c0c0c
+background = #131313
+background-alt = #191919
 foreground = #dcdccc
 foreground-alt = #777777
 
@@ -149,12 +150,12 @@ modules-left = i3
 modules-center = xwindow
 modules-right = cpu temperature memory battery xkeyboard date time powermenu
 
-tray-position = right
-tray-padding = 2
-tray-background = ${colors.background}
+;tray-position = right
+;tray-padding = 2
+;tray-background = ${colors.background}
 
 ;wm-restack = bspwm
-wm-restack = i3
+;wm-restack = i3
 
 ;override-redirect = true
 
@@ -523,7 +524,7 @@ menu-1-1 = reboot
 menu-1-1-exec = sudo reboot
 
 menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
+menu-2-0-exec = sudo shutdown now
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
@@ -535,7 +536,7 @@ interface = ${env:DEFAULT_INTERFACE:wlp2s0}
 label-connected = "%upspeed:7%"
 format-connected = <label-connected>
 ;format-connected-prefix = " "
-format-connected-prefix = ""
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 format-connected-underline = ${colors.blue}
 format-connected-foreground = ${colors.foreground}
@@ -546,7 +547,7 @@ interface = ${env:DEFAULT_INTERFACE:wlp2s0}
 label-connected = "%downspeed:7%"
 format-connected = <label-connected>
 ;format-connected-prefix = " "
-format-connected-prefix = ""
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 format-connected-underline = ${colors.blue}
 format-connected-foreground = ${colors.foreground}
