@@ -59,7 +59,7 @@ disk "/home" {
 }
 wireless _first_ {
 #    format_up = " wifi: %ip (%essid %quality %bitrate %frequency) "
-    format_up = " 📡 %essid %frequency %ip "
+    format_up = " 📡 %essid %frequency %quality %ip "
     format_down = " no wifi "
 }
 
