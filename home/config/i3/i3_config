@@ -233,9 +233,9 @@ exec --no-startup-id blueman-applet
 exec --no-startup-id xautolock -time 10 -locker "i3lock -c 000000"
 #exec --no-startup-id conky -c ~/.conkyrc
 exec --no-startup-id redshift -P -O 2500 -b 1.0
-exec --no-startup-id polybar top
 exec --no-startup-id nitrogen --set-tiled ~/background.jpg
 exec --no-startup-id udiskie --smart-tray
+exec --no-startup-id polybar top
 exec --no-startup-id polybar bottom
 
 set $id_touchpad  $( xinput list | grep -i touchpad | awk -F "id=" {'print $2'} | cut -f1 )
