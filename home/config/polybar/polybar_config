@@ -85,9 +85,9 @@ font-2 = siji:pixelsize=12;1
 ;font-2 = Weather Icons:size=14;1
 
 
-modules-left = xwindow 
+modules-left = wlan eth networkspeeddown networkspeedup
 ;modules-center = xwindow
-modules-right = wlan eth networkspeeddown networkspeedup filesystem alsa backlight-acpi
+modules-right = filesystem alsa backlight-acpi
 
 tray-position = right
 tray-padding = 2
@@ -146,7 +146,7 @@ font-2 = siji:pixelsize=12;1
 
 ;modules-left = i3 bspwm
 modules-left = i3
-;modules-center = xwindow
+modules-center = xwindow
 modules-right = cpu temperature memory battery xkeyboard date time powermenu
 
 tray-position = right

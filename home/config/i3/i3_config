@@ -163,26 +163,26 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        i3bar_command i3bar
-        status_command i3status
-        position bottom
-
-
-        strip_workspace_numbers yes
-        colors {
-            background #222D31
-            statusline #F9FAF9
-            separator  #454947
-
-#                               border  backgr. text
-            focused_workspace  #F9FAF9 #16a085 #292F34
-            active_workspace   #595B5B #353836 #FDF6E3
-            inactive_workspace #595B5B #222D31 #EEE8D5
-            binding_mode       #16a085 #2C2C2C #F9FAF9
-            urgent_workspace   #16a085 #FDF6E3 #E5201D
-        }
-}
+#bar {
+#        i3bar_command i3bar
+#        status_command i3status
+#        position bottom
+#
+#
+#        strip_workspace_numbers yes
+#        colors {
+#            background #222D31
+#            statusline #F9FAF9
+#            separator  #454947
+#
+##                               border  backgr. text
+#            focused_workspace  #F9FAF9 #16a085 #292F34
+#            active_workspace   #595B5B #353836 #FDF6E3
+#            inactive_workspace #595B5B #222D31 #EEE8D5
+#            binding_mode       #16a085 #2C2C2C #F9FAF9
+#            urgent_workspace   #16a085 #FDF6E3 #E5201D
+#        }
+#}
 
 
 ## MY CONFIG
@@ -235,6 +235,8 @@ exec --no-startup-id xautolock -time 10 -locker "i3lock -c 000000"
 exec --no-startup-id redshift -P -O 2500 -b 1.0
 exec --no-startup-id nitrogen --set-tiled ~/background.jpg
 exec --no-startup-id udiskie --smart-tray
+exec --no-startup-id polybar top
+exec --no-startup-id polybar bottom
 
 set $id_touchpad  $( xinput list | grep -i touchpad | awk -F "id=" {'print $2'} | cut -f1 )
 exec_always --no-startup-id xinput set-prop $id_touchpad "libinput Natural Scrolling Enabled" 1
