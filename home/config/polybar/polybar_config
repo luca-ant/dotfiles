@@ -375,7 +375,7 @@ interval = 5
 time = %H:%M
 ;time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix = ""
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.lavender}
 
@@ -389,7 +389,7 @@ interval = 5
 date =" %d/%m/%Y"
 ;date-alt = " %Y-%m-%d"
 
-format-prefix = 
+format-prefix = ""
 format-prefix-foreground = ${colors.foreground}
 format-underline = ${colors.purple}
 
@@ -427,7 +427,7 @@ type = internal/alsa
 
 format-volume = <label-volume> <bar-volume>
 label-volume = %percentage:2%%
-format-volume-prefix = 
+format-volume-prefix = " "
 format-volume-prefix-foreground = ${colors.foreground-alt}
 label-muted-foreground = ${colors.foreground-alt}
 
