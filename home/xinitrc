@@ -5,20 +5,46 @@
 # Executed by startx (run your window manager from here)
 
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
-  for f in /etc/X11/xinit/xinitrc.d/*; do
-    [ -x "$f" ] && . "$f"
-  done
-  unset f
+    for f in /etc/X11/xinit/xinitrc.d/*; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
 fi
 
 
-# exec startxfce4
-exec i3
 
-# exec mate-session
-# exec startlxqt
-# exec startlxde
-# exec gnome-session
-# exec gnome-session --session=gnome-classic
-# exec startkde
-# exec cinnamon-session
+if which polybar
+then
+    WM_CMD="i3"
+else
+
+    WM_CMD="i3 -c /tmp/i3_config"
+
+    cat ~/.config/i3/config > /tmp/i3_config
+    cat >> /tmp/i3_config <<EOL
+
+bar {
+        i3bar_command i3bar
+        status_command i3status
+        position bottom
+        strip_workspace_numbers yes
+        colors {
+            background #131313
+            statusline #F9FAF9
+            separator  #454947
+#                              border  backgr. text
+            focused_workspace  #F9FAF9 #16a085 #292F34
+            active_workspace   #595B5B #353836 #FDF6E3
+            inactive_workspace #595B5B #131313 #EEE8D5
+            binding_mode       #16a085 #2C2C2C #F9FAF9
+            urgent_workspace   #16a085 #FDF6E3 #E5201D
+        }
+}
+EOL
+
+
+fi
+
+
+exec $WM_CMD
+
