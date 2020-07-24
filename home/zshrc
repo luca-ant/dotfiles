@@ -29,12 +29,12 @@ fi
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
 
-
 ZSH_THEME="ys"
+#ZSH_THEME="fino-time"
 #ZSH_THEME="half-life"
 #ZSH_THEME="steeef"
-#ZSH_THEME="fino-time"
 #ZSH_THEME="agnoster"
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -90,13 +90,16 @@ ZSH_THEME="ys"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  osx
+#  osx
   python
+  pip
   sudo
-#  vi-mode
+  vi-mode
   extract
   command-not-found
   colored-man-pages
+  docker
+  vagrant
 )
 
 source $ZSH/oh-my-zsh.sh
