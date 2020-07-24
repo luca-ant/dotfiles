@@ -6,8 +6,9 @@ Plug 'scrooloose/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rafi/awesome-vim-colorschemes'
-"Plug 'tomsik68/vim-crystallite'
-"Plug 'reewr/vim-monokai-phoenix'
+Plug 'reewr/vim-monokai-phoenix'
+
+Plug 'lilydjwg/colorizer'
 
 "Plug 'powerline/powerline'
 Plug 'ryanoasis/vim-devicons'
@@ -29,13 +30,10 @@ call plug#end()
 
 "colorscheme monokai-phoenix
 
-"colorscheme murphy 
 colorscheme OceanicNext
-"colorscheme apprentice
-"colorscheme onedark
-"colorscheme purify
+"colorscheme afterglow
 
-"set background=dark
+set background=dark
 set t_Co=256
 set nocompatible
 set encoding=UTF-8
@@ -88,7 +86,8 @@ func SwapKeyLayout()
     endif
 
 endfunc
-"   nmap <C-c> :call SwapKeyLayout()<CR>
+"nmap <C-u> :call SwapKeyLayout()<CR>
+"nmap <C-i> :call SwapKeyLayout()<CR>
 
 
 
