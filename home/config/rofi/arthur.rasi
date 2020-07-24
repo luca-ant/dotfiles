@@ -24,19 +24,19 @@ configuration {
  * Copyright: Dave Davenport
  */
 * {
-    foreground:  #ffeedd;
+    foreground:  #dcdccc;
     backlight:   #ccffeedd;
     background-color:  transparent;
     dark: #1c1c1c;
 
     // mygreen
-    mygreen:	#16a085;
-    mylightgreen:	#2ecc71;
+    mygreen:    #16a085;
+    mylightgreen:   #98FB98;
 
     // Black
     black:       #3d352a;
     lightblack:  #554444;
-    tlightblack:  #554444cc;
+    tlightblack:  #252525dd;
     //
     // Red
     red:         #cd5c5c;

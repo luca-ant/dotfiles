@@ -54,8 +54,7 @@ cursor_foreground = #dcdccc
 foreground = #dcdccc
 foreground_bold = #ffffff
 #background = #3f3f3f
-background = #252525
-background = #0c0c0c
+#background = #252525
 background = #131313
 
 # 20% background transparency (requires a compositor)
@@ -83,9 +82,7 @@ highlight = #5a6166
 #color14 = #93e0e3
 #color15 = #ffffff
 
-# Background color
 color0 = #252525
-
 color8  = #657b83
 color7  = #93a1a1
 color15 = #fdf6e3

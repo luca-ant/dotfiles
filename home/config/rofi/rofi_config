@@ -10,5 +10,5 @@ rofi.separator-style: none
 rofi.hide-scrollbar: true
 rofi.line-margin: 0
 rofi.columns: 1
-rofi.font: sans-serif 10
+rofi.font: sans-serif 12
 rofi.theme: ~/.config/rofi/arthur.rasi
