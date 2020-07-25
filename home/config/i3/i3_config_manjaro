@@ -7,12 +7,13 @@ set $mod Mod4
 # set default desktop layout (default is tiling)
 # workspace_layout tabbed <stacking|tabbed>
 
-# Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 1
-#new_window none
-new_float normal
 
-# Hide borders
+# configure border style <normal|1pixel|pixel xx|none|pixel>
+default_border pixel 3
+#new_window none
+default_floating_border normal
+
+# hide borders
 hide_edge_borders none
 
 # change borders
@@ -62,8 +63,8 @@ exec --no-startup-id pa-applet
 ################################################################################################
 
 # Screen brightness controls
- bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
- bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # Start Applications
 #bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
@@ -291,7 +292,7 @@ mode "$mode_system" {
     bindsym r exec --no-startup-id i3exit reboot, mode "default"
     bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
-    # exit system mode: "Enter" or "Escape"
+# exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
@@ -299,25 +300,25 @@ mode "$mode_system" {
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 5 px or 5 ppt
-        bindsym k resize grow height 5 px or 5 ppt
-        bindsym l resize shrink height 5 px or 5 ppt
-        bindsym semicolon resize grow width 5 px or 5 ppt
+# These bindings trigger as soon as you enter the resize mode
+# Pressing left will shrink the window’s width.
+# Pressing right will grow the window’s width.
+# Pressing up will shrink the window’s height.
+# Pressing down will grow the window’s height.
+    bindsym j resize shrink width 5 px or 5 ppt
+    bindsym k resize grow height 5 px or 5 ppt
+    bindsym l resize shrink height 5 px or 5 ppt
+    bindsym semicolon resize grow width 5 px or 5 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+# same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
 
-        # exit resize mode: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+# exit resize mode: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 
@@ -355,45 +356,55 @@ set_from_resource $term_color15    color15
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-	i3bar_command i3bar
-	status_command i3status
-	position bottom
+    i3bar_command i3bar
+    status_command i3status
+    position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
-#	tray_output eDP1
+#  tray_output primary
+#  tray_output eDP1
 
-	bindsym button4 nop
-	bindsym button5 nop
+    bindsym button4 nop
+    bindsym button5 nop
 #   font xft:URWGothic-Book 11
-	strip_workspace_numbers yes
+    strip_workspace_numbers yes
 
     colors {
-        background #222D31
-        statusline #F9FAF9
-        separator  #454947
-
-#                          border  backgr. text
-        focused_workspace  #F9FAF9 #16a085 #292F34
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #222D31 #EEE8D5
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
+        background #131313
+        statusline #dcdccc
+        separator  #3f3f3f
+#                              border  backgr. text
+        focused_workspace  #dcdccc #16a085 #131313
+        active_workspace   #777777 #3f3f3f #dcdccc
+        inactive_workspace #777777 #131313 #dcdccc
+        binding_mode       #16a085 #2c2c2c #dcdccc
+        urgent_workspace   #16a085 #dcdccc #dc322f
     }
 }
 
 # hide/unhide i3status bar
 #bindsym $mod+m bar mode toggle
 
+
 # Theme colors
 # class                   border  backgr. text    indic.   child_border
-  client.focused          #556064 #556064 #80FFF9 #FDF6E3
-  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
-  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
-  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000 
+  client.focused          #16a085 #16a085 #dcdccc #dcdccc
+  client.focused_inactive #3f3f3f #3f3f3f #98fb98 #1e90ff
+  client.unfocused        #3f3f3f #3f3f3f #98fb98 #1e90ff
+  client.urgent           #dc322f #dc322f #98fb98 #1e90ff
+  client.placeholder      #131313 #131313 #dcdccc #dcdccc 
 
-  client.background       #2B2C2B
+  client.background       #131313
+
+## Theme colors
+## class                   border  backgr. text    indic.   child_border
+#  client.focused          #556064 #556064 #80FFF9 #FDF6E3
+#  client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
+#  client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
+#  client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
+#  client.placeholder      #000000 #0c0c0c #ffffff #000000 
+#
+#  client.background       #2B2C2B
 
 #############################
 ### settings for i3-gaps: ###
@@ -422,32 +433,32 @@ set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
 bindsym $mod+Shift+g mode "$mode_gaps"
 
 mode "$mode_gaps" {
-        bindsym o      mode "$mode_gaps_outer"
-        bindsym i      mode "$mode_gaps_inner"
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    bindsym o      mode "$mode_gaps_outer"
+    bindsym i      mode "$mode_gaps_inner"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 mode "$mode_gaps_inner" {
-        bindsym plus  gaps inner current plus 5
-        bindsym minus gaps inner current minus 5
-        bindsym 0     gaps inner current set 0
+    bindsym plus  gaps inner current plus 5
+    bindsym minus gaps inner current minus 5
+    bindsym 0     gaps inner current set 0
 
-        bindsym Shift+plus  gaps inner all plus 5
-        bindsym Shift+minus gaps inner all minus 5
-        bindsym Shift+0     gaps inner all set 0
+    bindsym Shift+plus  gaps inner all plus 5
+    bindsym Shift+minus gaps inner all minus 5
+    bindsym Shift+0     gaps inner all set 0
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 mode "$mode_gaps_outer" {
-        bindsym plus  gaps outer current plus 5
-        bindsym minus gaps outer current minus 5
-        bindsym 0     gaps outer current set 0
+    bindsym plus  gaps outer current plus 5
+    bindsym minus gaps outer current minus 5
+    bindsym 0     gaps outer current set 0
 
-        bindsym Shift+plus  gaps outer all plus 5
-        bindsym Shift+minus gaps outer all minus 5
-        bindsym Shift+0     gaps outer all set 0
+    bindsym Shift+plus  gaps outer all plus 5
+    bindsym Shift+minus gaps outer all minus 5
+    bindsym Shift+0     gaps outer all set 0
 
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }

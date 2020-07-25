@@ -29,7 +29,8 @@ primary = #00cccc
 # Blue
 secondary = #409fff
 # Fucsia
-alert = #b300ff
+alert = #dc322f
+#alert = #b300ff
 
 # Red
 red  = #dc322f
