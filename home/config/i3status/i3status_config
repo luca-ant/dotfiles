@@ -30,14 +30,17 @@ order += "time"
 order += "volume master"
 
 cpu_usage {
-    format = " cpu: %usage " 
+#    format = " cpu: %usage "
+    format = " ⚙️ %usage "
+#    format = " 🖥️ %usage "
 }
 
 cpu_temperature 0 {
 #   path="/sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input"
     path="/sys/class/thermal/thermal_zone0/temp"
-#    format = "🌡 %degrees°C"
-    format = "🌡️ %degrees°C"
+#    format = "🌡 %degrees°C "
+#    format = " 🌡️ %degrees°C "
+    format = " 🔥 %degrees°C "
 
 }
 
@@ -57,9 +60,10 @@ disk "/home" {
 #    format = " ⛁ %avail /home "
     format = " 🖴 %avail /home "
 }
+
 wireless _first_ {
 #    format_up = " wifi: %ip (%essid %quality %bitrate %frequency) "
-    format_up = " 📡 %essid %frequency %quality %ip "
+    format_up = " 📡 %essid %frequency (%quality) %ip "
     format_down = " no wifi "
 }
 
@@ -72,7 +76,7 @@ ethernet _first_ {
 
 battery all {
 #format = "%status %percentage %remaining %emptytime"
-    format = " %status %percentage %remaining "
+    format = " %status %percentage (%remaining) "
     format_down = " no battery"
     last_full_capacity = true
     integer_battery_capacity = true
@@ -89,7 +93,6 @@ battery all {
 
 }
 
-
 volume master {
 #    format = " ♪ %volume"
     format = " 🎵 %volume "
@@ -101,7 +104,7 @@ volume master {
 }
 
 time {
-    format=" 📅 %d/%m/%Y 🕔 %H:%M"
+    format=" 📅 %d/%m/%Y 🕔 %H:%M "
 
 }
 

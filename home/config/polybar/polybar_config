@@ -87,7 +87,7 @@ font-2 = siji:pixelsize=12;1
 
 
 modules-left = wlan eth networkspeeddown networkspeedup
-;modules-center = xwindow
+;modules-center =
 modules-right = filesystem alsa backlight-acpi
 
 tray-position = right
@@ -126,9 +126,9 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-#border-size = 4
-#border-bottom-size = 0
-#border-color = #00000000
+;border-size = 4
+;border-bottom-size = 0
+;border-color = #00000000
 
 padding-left = 1
 padding-right = 1
@@ -177,8 +177,8 @@ type = internal/xkeyboard
 ;blacklist-0 = num lock
 
 format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
-format-prefix-underline = ${colors.blue}
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = ${colors.blue}
 
 label-layout = %layout%
 label-layout-underline = ${colors.blue}
@@ -191,16 +191,25 @@ label-indicator-underline = ${colors.blue}
 [module/filesystem]
 type = internal/fs
 interval = 25
+fixed-values = false
+spacing = 0
 
 mount-0 = /
 mount-1 = /home
+mount-2 = /media/luca/DATA
 
-;label-mounted = %{F#409fff}%mountpoint%%{F-}: %percentage_used%%
-label-mounted = %free% free in %{F#409fff}%mountpoint%%{F-}
+format-mounted =  <label-mounted> 
+;label-mounted = "%free% free in %{F#409fff}%mountpoint%%{F-} (%percentage_used%%) "
+label-mounted = "%free% free in %{F#409fff}%mountpoint%%{F-} "
+format-mounted-prefix = " "
+format-mounted-prefix-foreground = ${colors.foreground-alt}
+format-mounted-underline = ${colors.blue}
+
 label-unmounted = %mountpoint% not mounted
-;label-unmounted = (%mountpoint%)
 label-unmounted-foreground = ${colors.foreground-alt}
-
+format-unmounted-prefix = " "
+format-unmounted-prefix-foreground = ${colors.foreground-alt}
+format-unmounted-underline = ${colors.blue}
 
 [module/bspwm]
 type = internal/bspwm
@@ -262,7 +271,6 @@ label-urgent-padding = 1
 ; Separator in between workspaces
 ;label-separator = |
 
-
 [module/mpd]
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
@@ -291,6 +299,8 @@ label = %percentage:2%%
 
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix = " "
+format-underline = ${colors.lavender}
+format-foreground = ${colors.foreground}
 
 bar-width = 5
 bar-indicator = 
@@ -304,7 +314,6 @@ bar-empty = ▒
 ;bar-empty = 
 bar-empty-font = 3
 bar-empty-foreground = ${colors.lavender}
-
 
 [module/backlight-acpi]
 inherit = module/xbacklight
@@ -335,7 +344,7 @@ interface = ${env:WLAN_INTERFACE:wlp2s0}
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.green}
+format-connected-underline = ${colors.red}
 ;label-connected = %essid%
 ;label-connected = %local_ip%
 label-connected = %essid% %local_ip%
@@ -358,9 +367,9 @@ type = internal/network
 interface = ${env:ETH_INTERFACE:eth0}
 interval = 3.0
 
-format-connected-underline = ${colors.lavender}
+format-connected-underline = ${colors.orange}
 format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground}
+format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
 format-disconnected = <label-disconnected>
@@ -372,25 +381,25 @@ label-disconnected-foreground = ${colors.foreground-alt}
 type = internal/date
 interval = 5
 
-time = %H:%M
+time = "%H:%M"
 ;time-alt = %H:%M:%S
 
-format-prefix = ""
-format-prefix-foreground = ${colors.foreground}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.lavender}
 
-label = %date% %time%
+label = %time%
 
 [module/date]
 type = internal/date
 interval = 5
 
 ;date =" %Y-%m-%d"
-date =" %d/%m/%Y"
+date ="%d/%m/%Y"
 ;date-alt = " %Y-%m-%d"
 
-format-prefix = ""
-format-prefix-foreground = ${colors.foreground}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.purple}
 
 label = %date%
@@ -430,9 +439,11 @@ label-volume = %percentage:2%%
 format-volume-prefix = " "
 format-volume-prefix-foreground = ${colors.foreground-alt}
 label-muted-foreground = ${colors.foreground-alt}
+format-volume-underline = ${colors.purple}
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.foreground-alt}
+format-muted-underline = ${self.format-volume-underline}
 label-muted = muted
 
 bar-volume-width = 5
@@ -442,24 +453,31 @@ bar-volume-indicator-font = 3
 bar-volume-fill = █
 ;bar-volume-fill = |
 bar-volume-fill-font = 3
-bar-volume-fill-foreground = ${colors.teal}
+bar-volume-fill-foreground = ${colors.purple}
 bar-volume-empty = ▒
 ;bar-volume-empty = 
 bar-volume-empty-font = 3
-bar-volume-empty-foreground = ${colors.teal}
-
+bar-volume-empty-foreground = ${colors.purple}
 
 [module/battery]
 type = internal/battery
 battery = BAT0
 adapter = ADP1
+poll-interval = 5
 full-at = 100
+time-format = %H:%M
 
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = ${colors.teal}
+;label-charging = Charging %percentage%% (%time%)
+label-charging = %percentage%% (%time%)
+
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
+;label-discharging = Discharging %percentage%% (%time%)
+label-discharging = %percentage%% (%time%)
+
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
@@ -530,19 +548,6 @@ menu-2-0-exec = sudo shutdown now
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
-
-[module/networkspeedup]
-
-type = internal/network
-interface = ${env:DEFAULT_INTERFACE:wlp2s0}
-label-connected = "%upspeed:7%"
-format-connected = <label-connected>
-;format-connected-prefix = " "
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-format-connected-underline = ${colors.blue}
-format-connected-foreground = ${colors.foreground}
-
 [module/networkspeeddown]
 type = internal/network
 interface = ${env:DEFAULT_INTERFACE:wlp2s0}
@@ -551,9 +556,19 @@ format-connected = <label-connected>
 ;format-connected-prefix = " "
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
-format-connected-underline = ${colors.blue}
+format-connected-underline = ${colors.yellow}
 format-connected-foreground = ${colors.foreground}
 
+[module/networkspeedup]
+type = internal/network
+interface = ${env:DEFAULT_INTERFACE:wlp2s0}
+label-connected = "%upspeed:7%"
+format-connected = <label-connected>
+;format-connected-prefix = " "
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+format-connected-underline = ${colors.green}
+format-connected-foreground = ${colors.foreground}
 
 [settings]
 screenchange-reload = true
