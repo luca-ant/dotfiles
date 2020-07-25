@@ -6,11 +6,11 @@ Plug 'scrooloose/syntastic'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'rafi/awesome-vim-colorschemes'
-Plug 'reewr/vim-monokai-phoenix'
+"Plug 'reewr/vim-monokai-phoenix'
 
 Plug 'lilydjwg/colorizer'
 
-"Plug 'powerline/powerline'
+Plug 'powerline/powerline'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'SirVer/ultisnips'
