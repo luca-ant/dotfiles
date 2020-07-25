@@ -9,7 +9,7 @@ set $mod Mod4
 
 
 # configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 3
+default_border pixel 2
 #new_window none
 default_floating_border normal
 
