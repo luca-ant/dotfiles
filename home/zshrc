@@ -155,6 +155,7 @@ alias pacman_autoremove='sudo pacman -R $(pacman -Qdtq)'
 
 alias vim='vim -p'
 
+alias ip_pub='curl ifconfig.me'
 
 eval `ssh-agent` 2>&1 > /dev/null
 trap 'test -n "$SSH_AGENT_PID" && /usr/bin/ssh-agent -k 2>&1 > /dev/null' 0 
