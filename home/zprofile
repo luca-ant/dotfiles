@@ -1,4 +1,6 @@
-source ~/.zshrc
+if [ -f ~/.zshrc ]; then
+    source ~/.zshrc
+fi
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 #[[ -z $DISPLAY && $XDG_VTNR -le 3 ]] && exec startx
 

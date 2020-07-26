@@ -239,8 +239,7 @@ exec --no-startup-id xautolock -time 10 -locker "i3lock -c '#131313'"
 exec --no-startup-id redshift -P -O 2500 -b 1.0
 exec --no-startup-id nitrogen --set-tiled ~/background.jpg
 exec --no-startup-id udiskie --smart-tray
-exec --no-startup-id polybar top
-exec --no-startup-id polybar bottom
+exec --no-startup-id "$DOTFILES_ROOT/script/run_polybar.sh"
 
 set $id_touchpad  $( xinput list | grep -i touchpad | awk -F "id=" {'print $2'} | cut -f1 )
 exec_always --no-startup-id xinput set-prop $id_touchpad "libinput Natural Scrolling Enabled" 1

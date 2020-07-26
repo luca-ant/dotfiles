@@ -13,7 +13,11 @@ MANJARO=$(grep -e "^NAME" /etc/os-release 2>/dev/null | grep -io Manjaro | head 
 ARCH=$(grep -e "^NAME" /etc/os-release 2>/dev/null | grep -io Arch | head -1)
 
 DOTFILES_URL="https://github.com/luca-ant/dotfiles.git"
-DOTFILES_ROOT="/home/$USER/.dotfiles"
+
+if [ -z "$DOTFILES_ROOT" ]
+then
+    DOTFILES_ROOT="/home/$USER/.dotfiles"
+fi
 
 run_command(){
     $ECHO_BLUE
