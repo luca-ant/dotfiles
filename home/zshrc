@@ -10,24 +10,7 @@ export EDITOR='vim'
 export VISUAL='vim'
 export DOTFILES_ROOT="/home/$USER/.dotfiles"
 
-if which google-chrome-stable > /dev/null 2>&1
-then
-    export BROWSER=$(which google-chrome-stable)
 
-elif which google-chrome > /dev/null 2>&1
-then
-    export BROWSER=$(which google-chrome)
-elif which firefox > /dev/null 2>&1
-then
-    export BROWSER=$(which firefox)
-fi
-
-DEFAULT_INTERFACE=$(ip route | grep '^default' | awk '{print $5}' | head -n1)
-ETH_INTERFACE=$(cat /proc/net/dev | grep -e "^en" | cut -d: -f1 | head -n1)
-WLAN_INTERFACE=$(cat /proc/net/dev | grep -e "^wl" | cut -d: -f1 | head -n1)
-export DEFAULT_INTERFACE
-export ETH_INTERFACE
-export WLAN_INTERFACE
 
   # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -158,5 +141,5 @@ alias vim='vim -p'
 alias ip_pub='curl ifconfig.me'
 
 eval `ssh-agent` 2>&1 > /dev/null
-trap 'test -n "$SSH_AGENT_PID" && /usr/bin/ssh-agent -k 2>&1 > /dev/null' 0 
+trap 'test -n "$SSH_AGENT_PID" && /usr/bin/ssh-agent -k 2>&1 > /dev/null' 0
 
