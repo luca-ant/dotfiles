@@ -2,15 +2,16 @@ call plug#begin('~/.vim/bundle')
 
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
-
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'rafi/awesome-vim-colorschemes'
-"Plug 'reewr/vim-monokai-phoenix'
-
 Plug 'lilydjwg/colorizer'
 
-Plug 'powerline/powerline'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
+
+"Plug 'flazz/vim-colorschemes'
+Plug 'tomasr/molokai'
+
+"Plug 'powerline/powerline'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'SirVer/ultisnips'
@@ -28,10 +29,8 @@ call plug#end()
 
 "VIM CONFIG
 
-"colorscheme monokai-phoenix
-
-colorscheme OceanicNext
-"colorscheme afterglow
+"colorscheme delek
+colorscheme molokai
 
 set background=dark
 set t_Co=256
@@ -40,31 +39,31 @@ set encoding=UTF-8
 set number relativenumber
 set number
 set backspace=indent,eol,start
-set list 
-"set listchars=tab:\|\ ,eol:⏎ " the last character of tab is space!
+set list
+"set listchars=tab:\|\ ,eol:⏎       " the last character of tab is space!
 "set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
 set listchars=tab:␉·,trail:␠,nbsp:⎵
 "set tabstop=4 shiftwidth=4 
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set spelllang=it,en_us
-set hlsearch                    "highlight search result
-set incsearch                   "search during typing
+set hlsearch                        "highlight search result
+set incsearch                       "search during typing
 set ignorecase
-set laststatus=2        "always show status bar
+set laststatus=2                    "always show status bar
 set wrap
-set ruler                   "show cursor's coordinates
-set showcmd                 "command's output to status bar
-set showmode                    "show current mode
-set showmatch                   "highlight matching brackets
-"set noswapfile                 "no more swapfiles
-set undofile                    "enable undo
+set ruler                           "show cursor's coordinates
+set showcmd                         "command's output to status bar
+set showmode                        "show current mode
+set showmatch                       "highlight matching brackets
+"set noswapfile                     "no more swapfiles
+set undofile                        "enable undo
 set undodir=~/.vim/undodir
 set undolevels=9999
-set autoindent                  "keep indentation
+set autoindent                      "keep indentation
 set smartindent
 set cindent
-set cursorline                 "highlight current line
-set cursorcolumn                 "highlight current column
+set cursorline                      "highlight current line
+set cursorcolumn                    "highlight current column
 set clipboard=unnamedplus
 highlight LineNr term=bold cterm=NONE ctermfg=DarkGrey ctermbg=NONE gui=NONE guifg=DarkGrey guibg=NONE
 
@@ -118,15 +117,17 @@ cnoremap W!!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 "AirlineTheme
 
-let g:airline_theme='luna'
-"let g:airline_theme='badwolf'
-
-let g:airline_powerline_fonts = 1   "enable powerline font
-let g:airline#extensions#tabline#enabled = 1    "show tabs if only one is enabled
-let g:airline#extensions#tabline#show_buffers = 1   "enable/disable displaying buffers with a single tab
-let g:airline#extensions#tabline#tab_nr_type = 1    "tab number
-
-"let g:powerline_pycmd="py3"
+"let g:airline_theme='luna'
+""let g:airline_theme='badwolf'
+"
+""let g:airline_powerline_fonts = 1   "enable powerline font
+"let g:airline#extensions#tabline#enabled = 1    "show tabs if only one is enabled
+""let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+"let g:airline#extensions#tabline#show_buffers = 0   "enable/disable displaying buffers with a single tab
+"let g:airline#extensions#tabline#tab_nr_type = 1    "tab number
+"
+""let g:powerline_pycmd="py3"
 
 "*"*"*"*"*"*"*"*"*"*"*"*"
 
@@ -168,6 +169,24 @@ let g:UltiSnipsSnippetDirectories=[$HOME . "/.vim/ultisnips"]
 
 "*"*"*"*"*"*"*"*"*"*"*"*"
 
+"lighline
+set noshowmode
+
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
+      \ },
+      \ 'component': {
+      \   'charvaluehex': '0x%B'
+      \ },
+    \ }
+
+"*"*"*"*"*"*"*"*"*"*"*"*"
 "autosave
 "let g:auto_save = 1  " enable AutoSave on Vim startup
 
