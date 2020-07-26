@@ -17,7 +17,7 @@ DOTFILES_ROOT="/home/$USER/.dotfiles"
 
 run_command(){
     $ECHO_BLUE
-    echo [-] Running \'$*\'
+#    echo [-] Running \'$*\'
     $ECHO_RED
     $* | while read L; do
         $ECHO_GREEN
@@ -25,7 +25,7 @@ run_command(){
         $ECHO_RED
     done
     $ECHO_BLUE
-    echo [+] \'$*\' Done!
+#    echo [+] \'$*\' Done!
     $ECHO_WHITE
 }
 
