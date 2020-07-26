@@ -43,7 +43,7 @@ set list
 "set listchars=tab:\|\ ,eol:⏎       " the last character of tab is space!
 "set listchars=eol:⏎,tab:␉·,trail:␠,nbsp:⎵
 set listchars=tab:␉·,trail:␠,nbsp:⎵
-"set tabstop=4 shiftwidth=4 
+"set tabstop=4 shiftwidth=4
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 set spelllang=it,en_us
 set hlsearch                        "highlight search result
