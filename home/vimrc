@@ -172,8 +172,9 @@ let g:UltiSnipsSnippetDirectories=[$HOME . "/.vim/ultisnips"]
 "lighline
 set noshowmode
 
+"\ 'colorscheme': 'wombat',
 let g:lightline = {
-      \ 'colorscheme': 'wombat',
+      \ 'colorscheme': 'deus',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'readonly', 'filename', 'modified' ] ],
