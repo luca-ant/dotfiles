@@ -219,9 +219,9 @@ bindsym $mod+o exec --no-startup-id "$DOTFILES_ROOT/script/lock_screen.sh || i3l
 bindsym $alt+l exec --no-startup-id "$DOTFILES_ROOT/script/lock_screen.sh || i3lock -c '#131313'"
 
 bindsym $mod+n exec nemo
-#bindsym $mod+c exec chromium-browser
 bindsym $mod+c exec $BROWSER
 #bindsym $mod+c exec google-chrome
+#bindsym $mod+c exec chromium-browser
 
 # Screenshot
 #bindsym Print exec --no-startup-id i3-scrot
