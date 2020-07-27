@@ -24,10 +24,10 @@ font pango:Roboto Mono 13
 #font pango:DejaVu Sans Mono 8
 
 # configure border style <normal|1pixel|pixel xx|none|pixel>
-border pixel 2
+new_window pixel 2
 #default_border pixel 2
 
-new_window none
+new_float normal 0
 #default_floating_border normal
 
 # hide borders
