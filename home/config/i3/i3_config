@@ -215,8 +215,8 @@ bindsym $alt+u exec --no-startup-id "setxkbmap us -option caps:escape ; notify-s
 # Start Applications
 #exec --no-startup-id volumeicon
 ##exec --no-startup-id pulseaudio --start
-bindsym $mod+o exec --no-startup-id i3lock -c "#131313"
-bindsym $alt+l exec --no-startup-id i3lock -c "#131313"
+bindsym $mod+o exec --no-startup-id "$DOTFILES_ROOT/script/lock_screen.sh || i3lock -c '#131313'"
+bindsym $alt+l exec --no-startup-id "$DOTFILES_ROOT/script/lock_screen.sh || i3lock -c '#131313'"
 
 bindsym $mod+n exec nemo
 #bindsym $mod+c exec chromium-browser
@@ -234,7 +234,7 @@ bindsym $mod+Shift+Print exec --no-startup-id "source ~/.config/i3-scrot.conf ; 
 # Autostart applications
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
-exec --no-startup-id xautolock -time 10 -locker "i3lock -c '#131313'"
+exec --no-startup-id xautolock -time 10 -locker "$DOTFILES_ROOT/script/lock_screen.sh || i3lock -c '#131313'"
 #exec --no-startup-id conky -c ~/.conkyrc
 exec --no-startup-id redshift -P -O 2500 -b 1.0
 exec --no-startup-id nitrogen --set-tiled ~/background.jpg
