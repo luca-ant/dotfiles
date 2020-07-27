@@ -258,7 +258,7 @@ spacing = 0
 
 mount-0 = /
 mount-1 = /home
-mount-2 = /media/luca/DATA
+;mount-2 = /media/luca/DATA
 
 format-mounted =  <label-mounted> 
 ;label-mounted = "%free% free in %{F#409fff}%mountpoint%%{F-} (%percentage_used%%) "
