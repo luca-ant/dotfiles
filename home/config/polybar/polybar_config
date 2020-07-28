@@ -120,6 +120,7 @@ radius = 5.0
 fixed-center = false
 
 bottom = true
+enable-ipc = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -232,26 +233,34 @@ cursor-scroll = ns-resize
 
 [module/weather]
 type = custom/script
-;exec = curl -s 'wttr.in?format=%l:+%c+%t+%h+%w+%o'
-;exec = curl -s 'wttr.in?format=4'
-exec = curl -s 'wttr.in?format=2'
-exec-if = ping -c 1 wttr.in
-interval = 3600
 
-;label = %output:0:15:...%
-label = %output%
+;exec = curl -s "wttr.in?format=%l:+%c+%t+%h+%w+%o"
+;exec = curl -s "wttr.in?format=2"
+;exec = curl -s "wttr.in/San Lorenzo in Campo?format=4"
+;exec = curl -s "wttr.in?format=4"
+exec = "$DOTFILES_ROOT/script/weather.sh"
+exec-if = ping -c 1 wttr.in
+;interval = 3600
+tail = true
+
+
+;label = %output%
+label = %output:0:50:...%
 format-background = ${colors.background}
 format-foreground = ${colors.foreground}
 format-underline = ${colors.blue}
 format-prefix = "🛰️ "
 format-prefix-foreground = ${colors.foreground-alt}
 
-click-middle = 
+;click-left = "kill -USR1 $(cat /tmp/weather_pid) &"
+click-left = "kill -USR1 %pid%"
+click-middle = "kill -USR1 %pid%"
+click-right = "kill -USR1 %pid%"
 
 
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title:0:25:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -352,7 +361,8 @@ label-visible-padding = ${self.label-focused-padding}
 ; urgent = Workspace with urgency hint set
 label-urgent = %index%
 label-urgent-background = ${colors.alert}
-label-urgent-underline = ${self.label-focused-underline}
+;label-urgent-underline = ${self.label-focused-underline}
+label-urgent-underline = ${colors.alert}
 label-urgent-padding = 1
 
 ; Separator in between workspaces
