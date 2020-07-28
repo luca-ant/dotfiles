@@ -618,7 +618,8 @@ expand-right = true
 format-spacing = 1
 
 ;label-open = 
-label-open = 🟩
+;label-open = 🟩
+label-open = 🔵
 label-open-foreground = ${colors.primary}
 ;label-close =  cancel
 label-close = "↪️ cancel"
