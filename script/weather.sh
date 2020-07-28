@@ -14,12 +14,12 @@ weather() {
 
 toggle() {
     T=$(((T + 1) % 3))
-    kill -SIGTERM $(pgrep --oldest --parent $$)
+    kill -15 $(pgrep --oldest --parent $$)
 }
 
 trap "toggle" USR1
 
-#echo $$ > /tmp/weather_pid
+echo $$ > /tmp/weather_pid
 
 while true; do
     weather
