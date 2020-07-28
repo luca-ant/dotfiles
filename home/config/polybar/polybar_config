@@ -252,12 +252,12 @@ format-underline = ${colors.blue}
 format-prefix = "🛰️ "
 format-prefix-foreground = ${colors.foreground-alt}
 
-click-left = "kill -USR1 $(pgrep --oldest --parent %pid%)"
-click-middle = "kill -USR1 $(pgrep --oldest --parent %pid%)"
-click-right = "kill -USR1 $(pgrep --oldest --parent %pid%)"
-;click-left = "kill -USR1 %pid%"
-;click-middle = "kill -USR1 %pid%"
-;click-right = "kill -USR1 %pid%"
+;click-left = "kill -USR1 $(pgrep --oldest --parent %pid%)"
+;click-middle = "kill -USR1 $(pgrep --oldest --parent %pid%)"
+;click-right = "kill -USR1 $(pgrep --oldest --parent %pid%)"
+click-left = "kill -USR1 %pid%"
+click-middle = "kill -USR1 %pid%"
+click-right = "kill -USR1 %pid%"
 
 
 [module/xwindow]

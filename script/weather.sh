@@ -14,6 +14,7 @@ weather() {
 
 toggle() {
     T=$(((T + 1) % 3))
+    kill $(pgrep --oldest --parent $$)
 }
 
 trap "toggle" USR1
