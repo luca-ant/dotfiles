@@ -234,10 +234,6 @@ cursor-scroll = ns-resize
 [module/weather]
 type = custom/script
 
-;exec = curl -s "wttr.in?format=%l:+%c+%t+%h+%w+%o"
-;exec = curl -s "wttr.in?format=2"
-;exec = curl -s "wttr.in/San Lorenzo in Campo?format=4"
-;exec = curl -s "wttr.in?format=4"
 exec = "$DOTFILES_ROOT/script/weather.sh"
 exec-if = ping -c 1 wttr.in
 ;interval = 3600
@@ -252,15 +248,15 @@ format-underline = ${colors.blue}
 format-prefix = "🛰️ "
 format-prefix-foreground = ${colors.foreground-alt}
 
-;click-left = "kill -USR1 $(pgrep --oldest --parent %pid%)"
-;click-middle = "kill -USR1 $(pgrep --oldest --parent %pid%)"
-;click-right = "kill -USR1 $(pgrep --oldest --parent %pid%)"
 click-left = "kill -USR1 $(cat /tmp/weather_pid)"
 click-middle = "kill -USR1 $(cat /tmp/weather_pid)"
 click-right = "kill -USR1 $(cat /tmp/weather_pid)"
 ;click-left = "kill -USR1 %pid%"
 ;click-middle = "kill -USR1 %pid%"
 ;click-right = "kill -USR1 %pid%"
+;click-left = "kill -USR1 $(pgrep --oldest --parent %pid%)"
+;click-middle = "kill -USR1 $(pgrep --oldest --parent %pid%)"
+;click-right = "kill -USR1 $(pgrep --oldest --parent %pid%)"
 
 
 [module/xwindow]
