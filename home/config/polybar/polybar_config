@@ -79,9 +79,9 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Roboto Mono:size=12
-font-1 = Noto:pixelsize=12;1
-font-2 = siji:pixelsize=12;1
-;font-3 = Noto Color Emoji:pixelsize=12;1
+font-1 = Noto:size=12;1
+font-2 = "Noto Color Emoji:pixelsize=16:style=Regular:scale=10;2"
+;font-2 = siji:pixelsize=12;1
 ;font-0 = fixed:pixelsize=12;1
 ;font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
 ;font-2 = Weather Icons:size=14;1
@@ -138,9 +138,10 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Roboto Mono:size=12
-font-1 = Noto:pixelsize=12;1
-font-2 = siji:pixelsize=12;1
-;font-3 = Noto Color Emoji:pixelsize=12;1
+font-1 = Noto:size=12;1
+font-2 = "Noto Color Emoji:pixelsize=16:scale=10;2"
+;font-2 = "Noto Color Emoji:pixelsize=16:style=Regular:scale=10;2"
+;font-2 = siji:pixelsize=12;1
 ;font-0 = fixed:pixelsize=12;1
 ;font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
 ;font-2 = Weather Icons:size=14;1
@@ -198,9 +199,9 @@ module-margin-left = 1
 module-margin-right = 1
 
 font-0 = Roboto Mono:size=12
-font-1 = Noto:pixelsize=12;1
-font-2 = siji:pixelsize=12;1
-;font-3 = Noto Color Emoji:pixelsize=12;1
+font-1 = Noto:size=12;1
+font-2 = "Noto Color Emoji:pixelsize=16:style=Regular:scale=10;2"
+;font-2 = siji:pixelsize=12;1
 ;font-0 = fixed:pixelsize=12;1
 ;font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
 ;font-2 = Weather Icons:size=14;1
@@ -238,7 +239,9 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 ;blacklist-0 = num lock
 
-format-prefix = " "
+;format-prefix = " "
+;format-prefix = "⌨️ "
+format-prefix = "🔤 "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.blue}
 
@@ -263,13 +266,17 @@ mount-1 = /home
 format-mounted =  <label-mounted> 
 ;label-mounted = "%free% free in %{F#409fff}%mountpoint%%{F-} (%percentage_used%%) "
 label-mounted = "%free% free in %{F#409fff}%mountpoint%%{F-} "
-format-mounted-prefix = " "
+;format-mounted-prefix = " "
+;format-mounted-prefix = "🖴  "
+format-mounted-prefix = "💾 "
 format-mounted-prefix-foreground = ${colors.foreground-alt}
 format-mounted-underline = ${colors.blue}
 
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
-format-unmounted-prefix = " "
+;format-unmounted-prefix = " "
+;format-unmounted-prefix = "🖴  "
+format-unmounted-prefix = "💾 "
 format-unmounted-prefix-foreground = ${colors.foreground-alt}
 format-unmounted-underline = ${colors.blue}
 
@@ -360,7 +367,8 @@ format = <label> <bar>
 label = %percentage:2%%
 
 format-prefix-foreground = ${colors.foreground-alt}
-format-prefix = " "
+;format-prefix = "🔅 "
+format-prefix = "☀️ "
 format-underline = ${colors.lavender}
 format-foreground = ${colors.foreground}
 
@@ -386,7 +394,9 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+;format-prefix = " "
+;format-prefix = "🖥️ "
+format-prefix = "⚙️ "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.red}
 label = %percentage:2%%
@@ -394,7 +404,8 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+;format-prefix = " "
+format-prefix = "📌 "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.yellow}
 label = %percentage_used%%
@@ -405,7 +416,10 @@ type = internal/network
 interface = ${env:WLAN_INTERFACE:wlp2s0}
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+;format-connected = <ramp-signal> <label-connected>
+format-connected = <label-connected>
+format-connected-prefix = "📡 "
+
 format-connected-underline = ${colors.red}
 ;label-connected = %essid%
 ;label-connected = %local_ip%
@@ -430,7 +444,9 @@ interface = ${env:ETH_INTERFACE:eth0}
 interval = 3.0
 
 format-connected-underline = ${colors.orange}
-format-connected-prefix = " "
+;format-connected-prefix = " "
+;format-connected-prefix = "🖧 "
+format-connected-prefix = "🌐 "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
@@ -446,7 +462,8 @@ interval = 5
 time = "%H:%M"
 ;time-alt = %H:%M:%S
 
-format-prefix = " "
+;format-prefix = " "
+format-prefix = "🕔 "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.lavender}
 
@@ -460,7 +477,8 @@ interval = 5
 date ="%d/%m/%Y"
 ;date-alt = " %Y-%m-%d"
 
-format-prefix = " "
+;format-prefix = " "
+format-prefix = "📅 "
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.purple}
 
@@ -498,12 +516,14 @@ type = internal/alsa
 
 format-volume = <label-volume> <bar-volume>
 label-volume = %percentage:2%%
-format-volume-prefix = " "
+;format-volume-prefix = " "
+format-volume-prefix = "🎵 "
 format-volume-prefix-foreground = ${colors.foreground-alt}
 label-muted-foreground = ${colors.foreground-alt}
 format-volume-underline = ${colors.purple}
 
-format-muted-prefix = " "
+;format-muted-prefix = " "
+format-muted-prefix = "🔇 "
 format-muted-foreground = ${colors.foreground-alt}
 format-muted-underline = ${self.format-volume-underline}
 label-muted = muted
@@ -529,19 +549,24 @@ poll-interval = 5
 full-at = 100
 time-format = %H:%M
 
-format-charging = <animation-charging> <label-charging>
+;format-charging = <animation-charging> <label-charging>
+format-charging = <label-charging>
+format-charging-prefix = "🔌 "
 format-charging-underline = ${colors.teal}
 ;label-charging = Charging %percentage%% (%time%)
 label-charging = %percentage%% (%time%)
 
 
-format-discharging = <animation-discharging> <label-discharging>
+;format-discharging = <animation-discharging> <label-discharging>
+format-discharging = <label-discharging>
+format-discharging-prefix = "🔋 "
 format-discharging-underline = ${self.format-charging-underline}
 ;label-discharging = Discharging %percentage%% (%time%)
 label-discharging = %percentage%% (%time%)
 
 
-format-full-prefix = " "
+;format-full-prefix = " "
+format-full-prefix = "⚡ "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
@@ -567,9 +592,13 @@ type = internal/temperature
 thermal-zone = 0
 warn-temperature = 60
 
-format = <ramp> <label>
+;format = <ramp> <label>
+format = <label>
+format-prefix = "🌡️ "
 format-underline = ${colors.orange}
-format-warn = <ramp> <label-warn>
+#format-warn = <ramp> <label-warn>
+format-warn = <label-warn>
+format-warn-prefix = "🔥 "
 format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
@@ -588,9 +617,11 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+;label-open = 
+label-open = 🟩
 label-open-foreground = ${colors.primary}
-label-close =  cancel
+;label-close =  cancel
+label-close = "↪️ cancel"
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
@@ -615,8 +646,8 @@ type = internal/network
 interface = ${env:DEFAULT_INTERFACE:wlp2s0}
 label-connected = "%downspeed:7%"
 format-connected = <label-connected>
-;format-connected-prefix = " "
-format-connected-prefix = " "
+;format-connected-prefix = " "
+format-connected-prefix = "⬇️ "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 format-connected-underline = ${colors.yellow}
 format-connected-foreground = ${colors.foreground}
@@ -626,8 +657,8 @@ type = internal/network
 interface = ${env:DEFAULT_INTERFACE:wlp2s0}
 label-connected = "%upspeed:7%"
 format-connected = <label-connected>
-;format-connected-prefix = " "
-format-connected-prefix = " "
+;format-connected-prefix = " "
+format-connected-prefix = "⬆️ "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 format-connected-underline = ${colors.green}
 format-connected-foreground = ${colors.foreground}
