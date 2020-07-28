@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 T=0
 
@@ -14,7 +14,7 @@ weather() {
 
 toggle() {
     T=$(((T + 1) % 3))
-    kill $(pgrep --oldest --parent $$)
+    kill -SIGTERM $(pgrep --oldest --parent $$)
 }
 
 trap "toggle" USR1
