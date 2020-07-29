@@ -242,6 +242,7 @@ exec --no-startup-id udiskie --smart-tray
 exec --no-startup-id xautolock -time 10 -locker "$DOTFILES_ROOT/script/lock_screen.sh || i3lock -c '#131313'"
 #exec --no-startup-id conky -c ~/.conkyrc
 exec --no-startup-id redshift -P -O 2500 -b 1.0
+#exec --no-startup-id "~/laptop/script/screenlayout.sh sanlore"
 exec --no-startup-id nitrogen --set-tiled ~/background.jpg
 exec --no-startup-id "$DOTFILES_ROOT/script/run_polybar.sh"
 
