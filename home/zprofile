@@ -2,7 +2,7 @@
 #    source ~/.zshrc
 #fi
 
-export PATH=$PATH":/snap/bin:~/.local/bin"
+export PATH=$PATH":/snap/bin:/home/$USER/.local/bin"
 export TERMINAL='termite'
 export DOTFILES_ROOT="/home/$USER/.dotfiles"
 
