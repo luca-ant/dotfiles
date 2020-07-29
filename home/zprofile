@@ -14,9 +14,9 @@ then
     export BROWSER=$(which firefox)
 fi
 
-DEFAULT_INTERFACE=$(ip route | grep '^default' | awk '{print $5}' | head -n1)
-ETH_INTERFACE=$(cat /proc/net/dev | grep -e "^en" | cut -d: -f1 | head -n1)
-WLAN_INTERFACE=$(cat /proc/net/dev | grep -e "^wl" | cut -d: -f1 | head -n1)
+DEFAULT_INTERFACE=$(ip route | grep -e '^default' | awk '{print $5}' | head -n1)
+ETH_INTERFACE=$(cat /proc/net/dev | grep -e '^en' | cut -d: -f1 | head -n1)
+WLAN_INTERFACE=$(cat /proc/net/dev | grep -e '^wl' | cut -d: -f1 | head -n1)
 export DEFAULT_INTERFACE
 export ETH_INTERFACE
 export WLAN_INTERFACE
@@ -24,4 +24,3 @@ export WLAN_INTERFACE
 
 [[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
 #[[ -z $DISPLAY && $XDG_VTNR -le 3 ]] && exec startx
-
