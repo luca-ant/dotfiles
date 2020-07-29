@@ -1,6 +1,10 @@
-if [ -f ~/.zshrc ]; then
-    source ~/.zshrc
-fi
+#if [ -f ~/.zshrc ]; then
+#    source ~/.zshrc
+#fi
+
+export PATH=$PATH":/snap/bin:~/.local/bin"
+export TERMINAL='termite'
+export DOTFILES_ROOT="/home/$USER/.dotfiles"
 
 if which google-chrome-stable > /dev/null 2>&1
 then
