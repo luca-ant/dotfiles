@@ -32,7 +32,7 @@ toggle() {
 
 trap "toggle" USR1
 
-echo $$ > /tmp/weather_pid
+echo $$ >> /tmp/weather_pid
 
 while true; do
     weather
