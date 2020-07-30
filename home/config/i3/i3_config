@@ -228,11 +228,11 @@ bindsym $mod+c exec $BROWSER
 
 # Screenshot
 #bindsym Print exec --no-startup-id i3-scrot
-bindsym Print exec --no-startup-id "source ~/.config/i3-scrot.conf ; cd $scrot_dir ; scrot && notify-send 'Screenshot of screen has been saved'"
+bindsym Print exec --no-startup-id "$DOTFILES_ROOT/script/print.sh -s"
 #bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Print exec --no-startup-id "source ~/.config/i3-scrot.conf ; cd $scrot_dir ; scrot -u && notify-send 'Screenshot of windows has been saved'"
+bindsym $mod+Print exec --no-startup-id "$DOTFILES_ROOT/script/print.sh -w"
 #bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-bindsym $mod+Shift+Print exec --no-startup-id "source ~/.config/i3-scrot.conf ; cd $scrot_dir ; notify-send 'Select an area for the screenshot' ; scrot -s -f && notify-send 'Screenshot of area has been saved'"
+bindsym $mod+Shift+Print exec --no-startup-id "$DOTFILES_ROOT/script/print.sh -a"
 
 # Autostart applications
 exec --no-startup-id nm-applet
