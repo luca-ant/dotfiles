@@ -80,7 +80,7 @@ module-margin-right = 1
 
 font-0 = Roboto Mono:size=12
 font-1 = Noto:size=12;1
-font-2 = "Noto Color Emoji:pixelsize=16:style=Regular:scale=10;2"
+font-2 = "Noto Color Emoji:pixelsize=16:scale=10;2"
 ;font-2 = siji:pixelsize=12;1
 ;font-0 = fixed:pixelsize=12;1
 ;font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
@@ -141,7 +141,6 @@ module-margin-right = 1
 font-0 = Roboto Mono:size=12
 font-1 = Noto:size=12;1
 font-2 = "Noto Color Emoji:pixelsize=16:scale=10;2"
-;font-2 = "Noto Color Emoji:pixelsize=16:style=Regular:scale=10;2"
 ;font-2 = siji:pixelsize=12;1
 ;font-0 = fixed:pixelsize=12;1
 ;font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
@@ -171,8 +170,67 @@ modules-right = cpu temperature memory battery xkeyboard weather date time power
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+[bar/bottom2]
+monitor = ${env:MONITOR:eDP-1}
+width = 100%
+height = 30
+;offset-x = 1%
+;offset-y = 1%
+radius = 5.0
+fixed-center = false
 
-[bar/extra]
+bottom = true
+enable-ipc = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = #f00
+
+;border-size = 4
+;border-bottom-size = 0
+;border-color = #00000000
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = Roboto Mono:size=12
+font-1 = Noto:size=12;1
+font-2 = "Noto Color Emoji:pixelsize=16:scale=10;2"
+;font-2 = siji:pixelsize=12;1
+;font-0 = fixed:pixelsize=12;1
+;font-1 = unifont:fontformat=truetype:size=10:antialias=false;0
+;font-2 = Weather Icons:size=14;1
+
+
+;modules-left = i3 bspwm
+modules-left = i3
+modules-center = xwindow
+modules-right = weather date time powermenu
+
+;tray-position = right
+;tray-padding = 2
+;tray-background = ${colors.background}
+
+;wm-restack = bspwm
+;wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[bar/top2]
 monitor = ${env:MONITOR:eDP-1}
 width = 100%
 height = 30
@@ -201,7 +259,7 @@ module-margin-right = 1
 
 font-0 = Roboto Mono:size=12
 font-1 = Noto:size=12;1
-font-2 = "Noto Color Emoji:pixelsize=16:style=Regular:scale=10;2"
+font-2 = "Noto Color Emoji:pixelsize=16:scale=10;2"
 ;font-2 = siji:pixelsize=12;1
 ;font-0 = fixed:pixelsize=12;1
 ;font-1 = unifont:fontformat=truetype:size=10:antialias=false;0

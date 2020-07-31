@@ -15,13 +15,12 @@ export WLAN_INTERFACE=$(cat /proc/net/dev | grep -e '^wl' | cut -d: -f1 | head -
 
 # Launch Polybar, using default config location ~/.config/polybar/config
 
-
 for m in $(xrandr -q | grep " connected" | cut -d" " -f1); do
     if [ "$m" = "$PRIMARY" ] ; then
         MONITOR=$m polybar bottom &
         MONITOR=$m polybar top &
     else
-        MONITOR=$m polybar bottom &
-        MONITOR=$m polybar extra &
+        MONITOR=$m polybar bottom2 &
+#        MONITOR=$m polybar top2 &
     fi
 done

@@ -71,7 +71,8 @@ configuration {
     highlight:     underline bold #ffffff;
 
     transparent: rgba(0,0,0,0);
-    font: "Source Code Pro 10";
+//    font: "Source Code Pro 10";
+    font: "Roboto Mono 12";
 }
 #window {
     location: center;
@@ -100,7 +101,8 @@ configuration {
     background-color: @mygreen;
 }
 #message {
-    font: "Source Code Pro 8";
+//    font: "Source Code Pro 8";
+    font: "Roboto Mono 10";
     color: @black;
 }
 
@@ -111,7 +113,8 @@ configuration {
     border: 2px 2px 2px 2px;
     border-radius:  15px 15px 0px 0px;
     border-color: @mygreen;
-    font: "Source Code Pro 18";
+//    font: "Source Code Pro 18";
+    font: "Roboto Mono 12";
 }
 #entry,prompt,case-indicator {
     text-font: inherit;
