@@ -321,8 +321,9 @@ click-right = "kill -USR1 $(cat /tmp/weather_pid)"
 [module/spotify]
 type = custom/script
 interval = 5
-#format-prefix = "🎵 "
-format-prefix = "📻 "
+;format-prefix = "🎵 "
+;format-prefix = "📻 "
+format-prefix = " "
 format = <label>
 exec = python $DOTFILES_ROOT/script/spotify_status.py -t 25 -f '{play_pause} {artist} - {song}'
 #format-underline = ${colors.teal}
