@@ -202,8 +202,8 @@ bindsym $mod+r mode "resize"
 #bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5% #decrease sound volume
 #bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle # mute sound
 
-bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+ unmute #increase sound volume
-bindsym XF86AudioLowerVolume exec amixer -q set Master 5%- unmute #decrease sound volume
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2%+ unmute #increase sound volume
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2%- unmute #decrease sound volume
 bindsym XF86AudioMute exec amixer -q set Master toggle  # mute sound
 
 # Screen brightness controls
