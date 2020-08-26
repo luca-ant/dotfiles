@@ -339,6 +339,8 @@ label = %title:0:25:...%
 type = internal/xkeyboard
 ;blacklist-0 = num lock
 
+format = %{A1: if setxkbmap -query | grep layout | grep us ; then setxkbmap it ; else setxkbmap us; fi :}<label-layout> <label-indicator>%{A}
+
 ;format-prefix = " "
 ;format-prefix = "⌨️ "
 format-prefix = "🔤 "
@@ -352,6 +354,7 @@ label-layout-underline = ${colors.blue}
 ;label-indicator-margin = 1
 label-indicator-background = ${colors.background}
 label-indicator-underline = ${colors.blue}
+
 
 [module/filesystem]
 type = internal/fs
