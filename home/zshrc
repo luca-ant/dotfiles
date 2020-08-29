@@ -82,7 +82,7 @@ ZSH_THEME="ys"
 plugins=(
   git
 #  osx
-  python
+#  python
   pip
   sudo
 #  vi-mode
