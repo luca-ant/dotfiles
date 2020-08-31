@@ -6,14 +6,13 @@
 
 configuration {
 
-    // The display name of this browser
     display-ssh:                   "  ";
-    // The display name of this browser
-    display-run:                    "";
-    // The display name of this browser
-    display-drun:                   "";
-    // The display name of this browser
-    display-window:                 "";
+//    display-run:                    "";
+    display-run:                    "🔍";
+//    display-drun:                   "";
+    display-drun:                   "🎨";
+//    display-window:                 "";
+    display-window:                 "🎲";
     display-combi:                  "";
     show-icons: true;
 }
@@ -159,7 +158,7 @@ configuration {
     foreground: @lightred;
 }
 #element selected active {
-    background-color: @lightblue;
+    background-color: @mygreen;
     foreground: @dark;
 }
 #element selected urgent {

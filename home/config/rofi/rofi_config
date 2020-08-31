@@ -1,6 +1,6 @@
 rofi.show-icons: true
 drun-icon-theme: "breath";
-rofi.modi: drun,run,window,ssh
+rofi.modi: drun,run,window
 rofi.lines: 7
 rofi.line-padding: 10
 rofi.matching: fuzzy
