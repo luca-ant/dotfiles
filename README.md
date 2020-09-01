@@ -31,7 +31,7 @@ timedatectl set-local-rtc 0 --adjust-system-clock
 Add these lines in file */etc/fstab* to mount data partition at boot
 ```
 # Entry for data partition
-UUID=XXXXXXXXXXXXXXXX /media/luca/DATA	ntfs-3g	defaults,auto,fmask=0022,dmask=0022,uid=1000,gid=1000	0	0
+UUID=XXXXXXXXXXXXXXXX /media/luca/DATA	ntfs-3g	defaults,auto,fmask=033,dmask=022,uid=1000,gid=1000	0	0
 ```
 
 ### Copy SSH Public Key
