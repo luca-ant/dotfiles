@@ -45,6 +45,7 @@ bindsym $mod+Shift+q kill
 #bindsym $mod+d exec dmenu_run
 bindsym $mod+d exec --no-startup-id rofi -show run
 bindsym $mod+Shift+d exec --no-startup-id rofi -show drun
+bindsym $alt+d exec --no-startup-id rofi -show window
 
 
 # launch categorized menu
