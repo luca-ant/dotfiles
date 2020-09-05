@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 
 # thanks to https://github.com/Jvanrhijn/polybar-spotify
-
-import sys
-import dbus
-import argparse
+try:
+    import sys
+    import dbus
+    import argparse
+except:
+    exit(1)
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
