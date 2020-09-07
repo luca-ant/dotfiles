@@ -184,18 +184,19 @@ configuration {
     border: 0px 0px 0px 0px;
 }
 #button {
-    font: "FontAwesome 22";
+//    font: "FontAwesome 22";
+    font: "Roboto Mono 18";
     padding: 6px;
     border: 2px 0px 2px 2px;
     border-radius: 4px 0px 0px 4px;
     background-color: @tlightblack;
-    border-color: @foreground;
+    border-color: @mygreen;
     color: @foreground;
     horizontal-align: 0.5;
 }
 #button selected normal {
     color: @dark;
     border: 2px 0px 2px 2px;
-    background-color: @backlight;
-    border-color: @foreground;
+    background-color: @mylightgreen;
+    border-color: @mygreen;
 }
