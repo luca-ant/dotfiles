@@ -6,7 +6,7 @@ killall -q polybar
 # Wait until the processes have been shut down
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
-rm /tmp/weather_pid > /dev/null 2>&1
+rm /tmp/.weather_pid > /dev/null 2>&1
 
 PRIMARY=$(xrandr -q | grep primary | cut -d' ' -f1)
 export DEFAULT_INTERFACE=$(ip route | grep -e '^default' | awk '{print $5}' | head -n1)
