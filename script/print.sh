@@ -54,6 +54,6 @@ case "$1" in
      *)
         help_func
         exit 2
-                                                                                    esac
+ esac
 
-                                                                                    exit 0
+exit 0
