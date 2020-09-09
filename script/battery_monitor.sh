@@ -17,8 +17,8 @@ echo "$battery_state" >> /tmp/.battery
 
 checkBatteryLevel() {
     if [ $battery_state != "Discharging" ] || [ "${battery_level}" == "${previous_battery_level}" ]; then
-#        exit
-        echo
+        exit
+        notify-send "Battery (${battery_level}%)"
     fi
 
     if [ $battery_level -le 7 ]; then
@@ -27,7 +27,8 @@ checkBatteryLevel() {
 #        sleep 30 && systemctl suspend
 
     elif [ $battery_level -le 10 ]; then
-        notify-send "Very Low Battery (${battery_level}%)" "${battery_remaining} of battery remaining.\nYour computer will suspend soon unless plugged into a power source!" -u critical -t 30000
+        notify-send "Very Low Battery (${battery_level}%)" "${battery_remaining} of battery remaining.\nPlease, plug into a power source!" -u critical -t 30000
+#        notify-send "Very Low Battery (${battery_level}%)" "${battery_remaining} of battery remaining.\nYour computer will suspend soon unless plugged into a power source!" -u critical -t 30000
     elif [ $battery_level -le 15 ]; then
         notify-send "Low Battery (${battery_level}%)" "${battery_remaining} of battery remaining." -u normal
     fi
