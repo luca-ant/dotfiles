@@ -1,8 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 battery_level=`acpi -b | cut -d ' ' -f 4 | grep -o '[0-9]*'`
 battery_state=$(acpi | grep 'Battery' | sed 's/Battery\s[0-9]*: //' | sed 's/, [0-9][0-9]*\%.*//')
-battery_remaining=$(acpi | grep -oh '[0-9:]* remaining' | sed 's/:\w\w remaining$/ Minutes/'  | sed 's/00://' | sed 's/:/h /')
+battery_remaining=$(acpi | grep -oh '[0-9:]* remaining' | sed 's/ remaining$/s/'  | sed 's/:/h /' | sed 's/:/m /')
 
 if [ ! -f "/tmp/.battery" ]; then
     echo "$battery_level" > /tmp/.battery
@@ -18,16 +18,18 @@ echo "$battery_state" >> /tmp/.battery
 checkBatteryLevel() {
     if [ $battery_state != "Discharging" ] || [ "${battery_level}" == "${previous_battery_level}" ]; then
 #        exit
-        notify-send "Battery $battery_level%" -u normal
+        echo
     fi
 
     if [ $battery_level -le 7 ]; then
-        notify-send "Battery discharged" "Your computer will suspend in 25 seconds" -u critical -t 25000
-        sleep 25 && sudo systemctl suspend
+        notify-send "Battery discharged (${battery_level}%)" "${battery_remaining} of battery remaining.\nPlease, plug into a power source!" -u critical -t 30000
+#        notify-send "Battery discharged (${battery_level}%)" "${battery_remaining} of battery remaining.\nYour computer will suspend in 30 seconds!" -u critical -t 30000
+#        sleep 30 && systemctl suspend
+
     elif [ $battery_level -le 10 ]; then
-        notify-send "Very Low Battery" "Your computer will suspend soon unless plugged into a power source!" -u critical
+        notify-send "Very Low Battery (${battery_level}%)" "${battery_remaining} of battery remaining.\nYour computer will suspend soon unless plugged into a power source!" -u critical -t 30000
     elif [ $battery_level -le 15 ]; then
-        notify-send "Low Battery" "${battery_level}% (${battery_remaining} of battery remaining.)" -u normal
+        notify-send "Low Battery (${battery_level}%)" "${battery_remaining} of battery remaining." -u normal
     fi
 }
 
