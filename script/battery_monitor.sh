@@ -16,6 +16,7 @@ echo "$battery_level" > /tmp/.battery
 echo "$battery_state" >> /tmp/.battery
 
 checkBatteryLevel() {
+
     if [ $battery_state != "Discharging" ] || [ "${battery_level}" == "${previous_battery_level}" ]; then
         exit
         notify-send "Battery (${battery_level}%)"
@@ -29,12 +30,17 @@ checkBatteryLevel() {
     elif [ $battery_level -le 10 ]; then
         notify-send "Very Low Battery (${battery_level}%)" "${battery_remaining} of battery remaining.\nPlease, plug into a power source!" -u critical -t 30000
 #        notify-send "Very Low Battery (${battery_level}%)" "${battery_remaining} of battery remaining.\nYour computer will suspend soon unless plugged into a power source!" -u critical -t 30000
+
     elif [ $battery_level -le 15 ]; then
         notify-send "Low Battery (${battery_level}%)" "${battery_remaining} of battery remaining." -u normal
     fi
 }
 
 checkBatteryStateChange() {
+
+    if [ "$battery_state" == "Full" ] && [ "$previous_battery_state" != "Full" ]; then
+        notify-send "Battery Charged (${battery_level}%)" -u low
+    fi
     if [ "$battery_state" != "Discharging" ] && [ "$previous_battery_state" == "Discharging" ]; then
         notify-send "Charging" "Battery is now plugged in." -u low
     fi
