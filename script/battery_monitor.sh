@@ -52,3 +52,8 @@ checkBatteryStateChange() {
 
 checkBatteryStateChange
 checkBatteryLevel
+
+exit 0
+
+
+
