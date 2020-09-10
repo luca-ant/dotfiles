@@ -9,7 +9,6 @@ Plug 'lilydjwg/colorizer'
 Plug 'itchyny/lightline.vim'
 
 Plug 'flazz/vim-colorschemes'
-"Plug 'tomasr/molokai'
 
 "Plug 'powerline/powerline'
 "Plug 'ryanoasis/vim-devicons'
@@ -29,8 +28,8 @@ call plug#end()
 
 "VIM CONFIG
 
-"colorscheme delek
 colorscheme molokai
+"colorscheme delek
 
 set background=dark
 set t_Co=256
