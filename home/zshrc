@@ -140,8 +140,8 @@ alias pacman_autoremove='sudo pacman -R $(pacman -Qdtq)'
 alias vim='vim -p'
 
 alias ip_pub="curl -s ifconfig.me"
-#alias weather="curl -s wttr.in?n"
-weather() { curl -s "wttr.in/$*?n" }
+#alias weather="https://curl -s wttr.in?n"
+weather() { curl -s "https://wttr.in/$*?n" }
 
 eval `ssh-agent` >/dev/null 2>&1
 trap 'test -n "$SSH_AGENT_PID" && /usr/bin/ssh-agent -k >/dev/null 2>&1' 0
