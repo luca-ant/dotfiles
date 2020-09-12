@@ -6,7 +6,6 @@ conf=$HOME/.config/i3-scrot.conf
 scrot_dir="$HOME/Screenshot"
 
 help_func(){
-
     echo "
 available options:
 -s | --screen  full screen
@@ -33,20 +32,21 @@ case "$1" in
     -s|--screen)
         cd $scrot_dir
         scrot &&
-        sleep 1 &&
-        notify-send "Screenshot of screen has been saved in $scrot_dir"
+            sleep 1 &&
+            notify-send "Screenshot of screen" "Saved in $scrot_dir"
         ;;
     -w|--window)
         cd $scrot_dir
         scrot -u &&
-        sleep 1 &&
-        notify-send "Screenshot of windows has been saved in $scrot_dir"
+            sleep 1 &&
+            notify-send "Screenshot of windows" "Saved in $scrot_dir"
         ;;
     -a|--area)
         cd $scrot_dir
-        notify-send 'Select an area for the screenshot' &
+        notify-send "Select an area for the screenshot" -u low &
         scrot -f -s &&
-        sleep 1 && notify-send "Screenshot of area has been saved in $scrot_dir"
+            sleep 1 && 
+            notify-send "Screenshot of area" "Saved in $scrot_dir"
         ;;
      -h|--help)
         help_func
