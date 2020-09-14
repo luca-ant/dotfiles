@@ -270,7 +270,7 @@ font-2 = "Noto Color Emoji:pixelsize=16:scale=10;2"
 ;modules-left = i3 bspwm
 modules-left = i3
 modules-center = xwindow
-modules-right = weather date time powermenu
+modules-right = date time powermenu
 
 ;tray-position = right
 ;tray-padding = 2
