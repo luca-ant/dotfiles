@@ -128,7 +128,7 @@ source $ZSH/oh-my-zsh.sh
 #bindkey -v # enable vi-mode
 
 # Import vte.sh to open termite in the same directory
-source /etc/profile.d/vte.sh > /dev/null 2>1
+source /etc/profile.d/vte.sh > /dev/null 2>&1
 
 # MY ALIAS
 
@@ -142,8 +142,11 @@ alias pacman_autoremove='sudo pacman -R $(pacman -Qdtq)'
 
 alias vim='vim -p'
 
+# run() { nohup >/dev/null 2>&1 $* & disown }
+run() { setsid $* >/dev/null 2>&1 }
+
 alias ip_pub="curl -s ifconfig.me"
-#alias weather="https://curl -s wttr.in?n"
+# alias weather="https://curl -s wttr.in?n"
 weather() { curl -s "https://wttr.in/$*?n" }
 
 eval `ssh-agent` >/dev/null 2>&1
