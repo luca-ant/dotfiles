@@ -146,8 +146,8 @@ alias vim='vim -p'
 run() { setsid $* >/dev/null 2>&1 }
 
 alias ip_pub="curl -s ifconfig.me"
-# alias weather="https://curl -s wttr.in?n"
-weather() { curl -s "https://wttr.in/$*?n" }
+weather() { curl -s "https://wttr.in/$*" }
+# weather() { curl -s "https://wttr.in/$*?n" }
 
 eval `ssh-agent` >/dev/null 2>&1
 trap 'test -n "$SSH_AGENT_PID" && /usr/bin/ssh-agent -k >/dev/null 2>&1' 0
