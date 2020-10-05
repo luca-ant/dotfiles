@@ -17,7 +17,7 @@ echo "$battery_state" >> /tmp/.battery
 
 checkBatteryLevel() {
 
-    if [ $battery_state != "Discharging" ] || [ "${battery_level}" == "${previous_battery_level}" ]; then
+    if [ "$battery_state" != "Discharging" ] || [ "${battery_level}" == "${previous_battery_level}" ]; then
         exit
         notify-send "Battery (${battery_level}%)"
     fi
