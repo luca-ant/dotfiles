@@ -14,17 +14,17 @@ sleep 1
 
 # browser
 i3-msg "workspace 2; exec $BROWSER"
-sleep 1
+sleep 2
 i3-msg "workspace 3; exec $BROWSER"
-sleep 1
+sleep 2
 
 # visual studio code
 #i3-msg "workspace 3; exec code"
-#sleep 1
+#sleep 2
 
 # browser
 i3-msg "workspace 4; exec $BROWSER"
-sleep 1
+sleep 2
 
 # terminal
 i3-msg "workspace 5; exec $TERMINAL"
