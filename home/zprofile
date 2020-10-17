@@ -3,6 +3,7 @@
 #fi
 
 export PATH=$PATH":/snap/bin:/home/$USER/.local/bin"
+export PATH=".:"$PATH
 export TERMINAL='termite'
 export DOTFILES_ROOT="/home/$USER/.dotfiles"
 

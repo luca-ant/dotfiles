@@ -19,8 +19,10 @@ for m in $(xrandr -q | grep " connected" | cut -d" " -f1); do
     if [ "$m" = "$PRIMARY" ] ; then
         MONITOR=$m polybar bottom &
         MONITOR=$m polybar top &
+        echo
     else
         MONITOR=$m polybar bottom2 &
 #        MONITOR=$m polybar top2 &
+        echo
     fi
 done
