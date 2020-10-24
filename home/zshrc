@@ -84,14 +84,15 @@ plugins=(
   git
 #  osx
 #  python
-  pip
+#  pip
   sudo
+  cp
 #  vi-mode
   extract
   command-not-found
   colored-man-pages
-  docker
-  vagrant
+#  docker
+#  vagrant
 )
 
 source $ZSH/oh-my-zsh.sh
