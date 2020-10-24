@@ -14,7 +14,7 @@ Plug 'flazz/vim-colorschemes'
 "Plug 'ryanoasis/vim-devicons'
 
 Plug 'SirVer/ultisnips'
-"Plug 'lervag/vimtex'
+Plug 'lervag/vimtex'
 
 "Plug '907th/vim-auto-save'
 

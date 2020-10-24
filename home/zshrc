@@ -142,6 +142,7 @@ alias egrep='egrep --color=auto'
 alias pacman_autoremove='sudo pacman -R $(pacman -Qdtq)'
 
 alias vim='vim -p'
+alias vims='vim $(fzf --height 50% --reverse)'
 
 # run() { nohup >/dev/null 2>&1 $* & disown }
 run() { setsid $* >/dev/null 2>&1 }
