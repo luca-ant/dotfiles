@@ -216,8 +216,8 @@ bindsym XF86MonBrightnessUp exec "xbacklight -inc 10"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10"
 
 # Keyboard layout
-bindsym $alt+i exec --no-startup-id "setxkbmap it -option '' ; notify-send 'Keyboard IT'"
-bindsym $alt+u exec --no-startup-id "setxkbmap us -option caps:escape ; notify-send 'Keyboard US'"
+bindsym $alt+i exec --no-startup-id "setxkbmap it -option '' ; notify-send 'Keyboard IT' -u low"
+bindsym $alt+u exec --no-startup-id "setxkbmap us -option caps:escape ; notify-send 'Keyboard US' -u low"
 
 
 # Start Applications
