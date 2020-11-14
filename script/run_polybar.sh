@@ -17,6 +17,7 @@ export WLAN_INTERFACE=$(cat /proc/net/dev | grep -e '^wl' | cut -d: -f1 | head -
 
 if [[ $(polybar -m | wc -l) == 1 && $(xrandr -q | grep " connected" | wc -l) > 1 ]]
 then
+    m=$(polybar -m | cut -d: -f1)
     EXTEND=false MONITOR=$m polybar bottom >/dev/null 2>&1 &
     EXTEND=false MONITOR=$m polybar top >/dev/null 2>&1 &
 
