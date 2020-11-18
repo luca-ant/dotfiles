@@ -152,10 +152,12 @@
     ignore_newline = no
 
     # Stack together notifications with the same content
-    stack_duplicates = true
+#    stack_duplicates = true
+    stack_duplicates = false
 
     # Hide the count of stacked notifications with the same content
-    hide_duplicate_count = false
+#    hide_duplicate_count = false
+    hide_duplicate_count = true
 
     # Display indicators for URLs (U) and actions (A).
 #    show_indicators = yes
@@ -311,7 +313,7 @@
 [play_sound_critical]
     summary = "*"
     msg_urgency = critical
-    script = ~/.dotfiles/script/dunst_sound/dunst_notify.sh
+    script = ~/.dotfiles/script/dunst_sound/dunst_notify_critical.sh
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
