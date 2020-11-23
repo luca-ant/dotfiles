@@ -1,6 +1,6 @@
 #!/bin/bash
 
-T=0
+T=1
 
 output(){
     W="$1"
