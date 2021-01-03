@@ -1,6 +1,5 @@
-#if [ -f ~/.zshrc ]; then
-#    source ~/.zshrc
-#fi
+
+#[[ -f ~/.zshrc ]] && . ~/.zshrc
 
 export DOTFILES_ROOT="/home/$USER/.dotfiles"
 

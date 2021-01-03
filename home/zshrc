@@ -145,13 +145,31 @@ alias pacman_autoremove='sudo pacman -R $(pacman -Qdtq)'
 alias vim='vim -p'
 alias vims='vim $(fzf --height 50% --reverse)'
 
+alias ip_pub="curl -s ifconfig.me"
+
+# systemd
+alias sc=systemctl
+alias scu='systemctl --user'
+
+alias scst='sudo systemctl start'
+alias scsp='sudo systemctl stop'
+alias scrl='sudo systemctl reload'
+alias scrst='sudo systemctl restart'
+alias sce='sudo systemctl enable'
+alias scd='sudo systemctl disable'
+
+alias scs='systemctl status'
+
+# MY COMMANDS
+#
 # run() { nohup >/dev/null 2>&1 $* & disown }
 run() { setsid $* >/dev/null 2>&1 }
 
-alias ip_pub="curl -s ifconfig.me"
 weather() { curl -s "https://wttr.in/$*" }
 # weather() { curl -s "https://wttr.in/$*?n" }
 
+
+# SSH AGENT
 eval `ssh-agent` >/dev/null 2>&1
 trap 'test -n "$SSH_AGENT_PID" && /usr/bin/ssh-agent -k >/dev/null 2>&1' 0
 
