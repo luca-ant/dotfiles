@@ -19,6 +19,23 @@ then
     export BROWSER=$(which firefox)
 fi
 
+
+if which termite > /dev/null 2>&1
+then
+    export TERMINAL=$(which termite)
+elif which kitty > /dev/null 2>&1
+then
+    export TERMINAL=$(which kitty)
+elif which xfce4-terminal > /dev/null 2>&1
+then
+    export TERMINAL=$(which xfce4-terminal)
+fi
+elif which uxterm > /dev/null 2>&1
+then
+    export TERMINAL=$(which uxterm)
+fi
+
+
 #DEFAULT_INTERFACE=$(ip route | grep -e '^default' | awk '{print $5}' | head -n1)
 #ETH_INTERFACE=$(cat /proc/net/dev | grep -e '^en' | cut -d: -f1 | head -n1)
 #WLAN_INTERFACE=$(cat /proc/net/dev | grep -e '^wl' | cut -d: -f1 | head -n1)

@@ -5,7 +5,7 @@
 export ZSH=$HOME"/.oh-my-zsh"
 #export PATH=$PATH":/snap/bin:/home/$USER/.local/bin"
 export TERM='xterm-256color'
-export TERMINAL='termite'
+#export TERMINAL='termite'
 export EDITOR='vim'
 export VISUAL='vim'
 #export LANG=it_IT.UTF-8
