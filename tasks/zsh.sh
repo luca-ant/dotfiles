@@ -1,5 +1,12 @@
 #!/bin/bash
 
+BOLD=$(tput bold)
+NORMAL=$(tput sgr0)
+ECHO_RED='echo -en \033[31m'
+ECHO_GREEN='echo -en \033[32m'
+ECHO_BLUE='echo -en \033[36m'
+ECHO_WHITE='echo -en \033[37m'
+
 WD=$(dirname $(realpath $0))
 WD=$(dirname "$WD")
 
@@ -7,11 +14,16 @@ source "$WD/utils/check_user.sh"
 source "$WD/utils/os.sh"
 #source "$WD/utils/check_args.sh"
 
-run_command echo "[-] RUNNING TASK $0..."
+$ECHO_BLUE
+echo "[-] RUNNING TASK $0..."
+$ECHO_WHITE
 
 usage(){
-    run_command echo "Usage: $0 [ install | remove ]"
+    $ECHO_BLUE
+    echo "Usage: $0 [ install | remove ]"
+    $ECHO_WHITE
 }
+
 if [ $# != 1 ]
 then
     usage
@@ -36,26 +48,26 @@ then
     run_command ln -sf "$WD/home/zshrc" ~/.zshrc
     run_command ln -sf "$WD/home/zprofile" ~/.zprofile
 
-    run_command chsh -s /usr/bin/zsh
+#    run_command chsh -s /usr/bin/zsh
 
 
 elif [ $1 == "remove" ]
 then
+
+    run_command chsh -s /bin/bash
 
     remove_packet zsh
 
     run_command rm -rf ~/.zshrc*
     run_command rm -rf ~/.zprofile
 
-#    run_command chsh -s /bin/bash
-
 else
     usage
     exit 3
 fi
 
-run_command echo "[+] RUNNING TASK $0... DONE!"
-
-
+$ECHO_BLUE
+echo "[+] RUNNING TASK $0... DONE!"
+$ECHO_WHITE
 
 
