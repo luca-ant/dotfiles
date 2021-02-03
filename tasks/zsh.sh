@@ -35,8 +35,6 @@ then
     exit 2
 fi
 
-
-
 if [ $1 == "install" ] 
 
 then
@@ -48,7 +46,7 @@ then
     run_command ln -sf "$WD/home/zshrc" ~/.zshrc
     run_command ln -sf "$WD/home/zprofile" ~/.zprofile
 
-#    run_command chsh -s /usr/bin/zsh
+    run_command chsh -s /usr/bin/zsh
 
 
 elif [ $1 == "remove" ]
