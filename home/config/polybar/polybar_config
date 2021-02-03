@@ -30,7 +30,6 @@ primary = #00cccc
 secondary = #409fff
 # Fucsia
 alert = #dc322f
-#alert = #b300ff
 
 # Red
 red  = #dc322f

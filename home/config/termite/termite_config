@@ -52,7 +52,7 @@ cursor = #dcdccc
 cursor_foreground = #dcdccc
 
 foreground = #dcdccc
-foreground_bold = #ffffff
+foreground_bold = #dcdccc
 #background = #3f3f3f
 #background = #252525
 background = #131313
@@ -61,7 +61,7 @@ background = #131313
 #background = rgba(63, 63, 63, 0.8)
 
 # If unset, will reverse foreground and background
-highlight = #5a6166
+#highlight = #757575
 
 # Colors from color0 to color254 can be set
 #color0 = #3f3f3f
@@ -103,19 +103,19 @@ color3  = #ffa500
 color11 = #ffa500
 
 # Blue
-color4  = #409fff
-color12 = #409fff
+#color4  = #409fff
+#color12 = #409fff
 
-#color4  = #1e90ff
-#color12 = #1e90ff
+color4  = #1e90ff
+color12 = #1e90ff
 
 # Purple
 #color5  = #6c71c4
 #color13 = #6c71c4
 
 # Lavender
-color5  = #b57edc
-color13 = #b57edc
+color5  = #9966ff
+color13 = #9966ff
 
 # Teal
 #color6  = #16a085

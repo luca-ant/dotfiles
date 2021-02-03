@@ -180,15 +180,15 @@ configuration {
 #sidebar {
     expand: false;
     orientation: vertical;
-    spacing: 0px;
+    spacing: 10px;
     border: 0px 0px 0px 0px;
 }
 #button {
 //    font: "FontAwesome 22";
     font: "Roboto Mono 18";
-    padding: 6px;
+    padding: 8;
     border: 2px 0px 2px 2px;
-    border-radius: 4px 0px 0px 4px;
+    border-radius: 4px 4px 4px 4px;
     background-color: @tlightblack;
     border-color: @mygreen;
     color: @foreground;
