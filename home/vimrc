@@ -76,11 +76,11 @@ endif
 
 "swap keyboard layout
 func SwapKeyLayout()
-    let currentLayout = system("setxkbmap -query | grep layout | awk '{print $2}'")
+    let currentLayout = system("/usr/bin/setxkbmap -query | grep layout | awk '{print $2}'")
     if currentLayout =~ "us"
-        call system("setxkbmap it")
+        call system("/usr/bin/setxkbmap it")
     else
-        call system("setxkbmap us")
+        call system("/usr/bin/setxkbmap us")
     endif
 
 endfunc
