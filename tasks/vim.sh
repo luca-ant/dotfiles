@@ -35,7 +35,7 @@ then
     exit 2
 fi
 
-if [ $1 == "install" ] 
+if [ $1 == "install" ]
 
 then
     install_packet wget vim
