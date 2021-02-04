@@ -344,7 +344,7 @@ cursor-scroll = ns-resize
 [module/weather]
 type = custom/script
 
-exec = "$DOTFILES_ROOT/script/weather.sh"
+exec = "$DOTFILES_ROOT/custom/weather.sh"
 exec-if = ping -c 1 wttr.in
 ;interval = 3600
 tail = true
@@ -370,8 +370,8 @@ interval = 5
 ;format-prefix = "📻 "
 format-prefix = " "
 format = <label>
-;exec = python $DOTFILES_ROOT/script/spotify_status.py -t 25 -f '{play_pause} {artist} - {song}'
-exec = python $DOTFILES_ROOT/script/spotify_status.py -t 25 -f '{play_pause} {song} - {artist}'
+;exec = python $DOTFILES_ROOT/custom/spotify_status.py -t 25 -f '{play_pause} {artist} - {song}'
+exec = python $DOTFILES_ROOT/custom/spotify_status.py -t 25 -f '{play_pause} {song} - {artist}'
 #format-underline = ${colors.teal}
 format-underline = #1db954
 

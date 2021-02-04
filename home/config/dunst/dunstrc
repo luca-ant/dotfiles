@@ -307,13 +307,13 @@
 [play_sound_normal]
     summary = "*"
     msg_urgency = normal
-    script = ~/.dotfiles/script/dunst_sound/dunst_notify.sh
+    script = ~/.dotfiles/custom/dunst_sound/dunst_notify.sh
 
 
 [play_sound_critical]
     summary = "*"
     msg_urgency = critical
-    script = ~/.dotfiles/script/dunst_sound/dunst_notify_critical.sh
+    script = ~/.dotfiles/custom/dunst_sound/dunst_notify_critical.sh
 
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.

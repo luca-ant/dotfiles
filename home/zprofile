@@ -4,7 +4,7 @@
 export DOTFILES_ROOT="/home/$USER/.dotfiles"
 
 export PATH=$PATH":/snap/bin:/home/$USER/.local/bin"
-export PATH="$DOTFILES_ROOT/script:"$PATH
+export PATH="$DOTFILES_ROOT/custom:"$PATH
 export PATH=".:"$PATH
 #export TERMINAL='termite'
 

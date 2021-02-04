@@ -223,8 +223,8 @@ bindsym $mod+u exec --no-startup-id "setxkbmap us -option caps:escape ; notify-s
 # Start Applications
 #exec --no-startup-id volumeicon
 ##exec --no-startup-id pulseaudio --start
-bindsym $mod+p exec --no-startup-id "$DOTFILES_ROOT/script/lock_screen.sh || i3lock -c '#131313'"
-#bindsym $alt+l exec --no-startup-id "$DOTFILES_ROOT/script/lock_screen.sh || i3lock -c '#131313'"
+bindsym $mod+p exec --no-startup-id "$DOTFILES_ROOT/custom/lock_screen.sh || i3lock -c '#131313'"
+#bindsym $alt+l exec --no-startup-id "$DOTFILES_ROOT/custom/lock_screen.sh || i3lock -c '#131313'"
 
 bindsym $mod+n exec nemo
 bindsym $mod+c exec $BROWSER
@@ -233,24 +233,23 @@ bindsym $mod+c exec $BROWSER
 
 # Screenshot
 #bindsym Print exec --no-startup-id i3-scrot
-bindsym Print exec --no-startup-id "$DOTFILES_ROOT/script/print.sh -s"
+bindsym Print exec --no-startup-id "$DOTFILES_ROOT/custom/print.sh -s"
 #bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Print exec --no-startup-id "$DOTFILES_ROOT/script/print.sh -w"
+bindsym $mod+Print exec --no-startup-id "$DOTFILES_ROOT/custom/print.sh -w"
 #bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-bindsym $mod+Shift+Print exec --no-startup-id "$DOTFILES_ROOT/script/print.sh -a"
+bindsym $mod+Shift+Print exec --no-startup-id "$DOTFILES_ROOT/custom/print.sh -a"
 
 # Autostart applications
 exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 exec --no-startup-id udiskie --smart-tray
 
-exec --no-startup-id xautolock -time 10 -locker "$DOTFILES_ROOT/script/lock_screen.sh || i3lock -c '#131313'"
+exec --no-startup-id xautolock -time 10 -locker "$DOTFILES_ROOT/custom/lock_screen.sh || i3lock -c '#131313'"
 #exec --no-startup-id conky -c ~/.conkyrc
 exec --no-startup-id redshift -P -O 2500 -b 1.0
-#exec --no-startup-id "~/laptop/script/screenlayout.sh sanlore"
 exec --no-startup-id nitrogen --set-tiled ~/background.jpg
-#exec --no-startup-id "$DOTFILES_ROOT/script/autostart.sh"
-exec --no-startup-id "$DOTFILES_ROOT/script/run_polybar.sh"
+#exec --no-startup-id "$DOTFILES_ROOT/custom/autostart.sh"
+exec --no-startup-id "$DOTFILES_ROOT/custom/run_polybar.sh"
 
 set $id_touchpad  $( xinput list | grep -i touchpad | awk -F "id=" {'print $2'} | cut -f1 )
 exec_always --no-startup-id xinput set-prop $id_touchpad "libinput Natural Scrolling Enabled" 1
