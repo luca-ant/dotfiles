@@ -1,7 +1,5 @@
 /**
- * ROFI Color theme
- * User: Qball
- * Copyright: Dave Davenport
+ * User: Luke
  */
 
 configuration {
@@ -18,10 +16,6 @@ configuration {
 }
 
 
-/**
- * User: Qball
- * Copyright: Dave Davenport
- */
 * {
     foreground:  #dcdccc;
     backlight:   #ccffeedd;
@@ -73,6 +67,7 @@ configuration {
 //    font: "Source Code Pro 10";
     font: "Roboto Mono 12";
 }
+
 #window {
     location: center;
     anchor:   center;
@@ -80,10 +75,11 @@ configuration {
     padding: 10px;
     border:  0px;
     border-radius: 10px;
-    color: @magenta;
+    color: @blue;
     background-color: @transparent;
     spacing: 0;
-    children:  [vertb, mainbox];
+//    children:  [vertb, mainbox];
+    children:  [mainbox];
     orientation: horizontal;
 }
 
@@ -93,16 +89,14 @@ configuration {
 }
 
 #message {
+//    font: "Source Code Pro 8";
+    font: "Roboto Mono 10";
+    color: @black;
     border-color: @mygreen;
     border:  0px 2px 2px 2px;
 //    border-radius: 10px;
     padding: 5;
     background-color: @mygreen;
-}
-#message {
-//    font: "Source Code Pro 8";
-    font: "Roboto Mono 10";
-    color: @black;
 }
 
 #inputbar {
@@ -117,10 +111,10 @@ configuration {
 }
 #entry,prompt,case-indicator {
     text-font: inherit;
-    text-color:inherit;
+    text-color: inherit;
 }
 #prompt {
-    margin:     0px 0.3em 0em 0em ;
+    margin: 0em 0.3em 0em 0em ;
 }
 #listview {
     padding: 8px;
@@ -138,35 +132,45 @@ configuration {
     border-radius: 4px;
     background-color: transparent;
     color: @foreground;
-    font:inherit;
+    font: inherit;
 }
+
 #element selected.normal {
     background-color: @mygreen;
 }
-#element normal active {
-    foreground: @mygreen;
-}
-#element normal urgent {
-    foreground: @lightred;
-}
-#element alternate normal {
-}
-#element alternate active {
-    foreground: @mygreen;
-}
-#element alternate urgent {
-    foreground: @lightred;
-}
+
 #element selected active {
     background-color: @mygreen;
     foreground: @dark;
 }
+
 #element selected urgent {
     background-color: @lightred;
     foreground: @dark;
 }
+
 #element normal normal {
 
+}
+
+#element normal active {
+    foreground: @mygreen;
+}
+
+#element normal urgent {
+    foreground: @lightred;
+}
+
+#element alternate normal {
+
+}
+
+#element alternate active {
+    foreground: @mygreen;
+}
+
+#element alternate urgent {
+    foreground: @lightred;
 }
 
 #vertb {
@@ -180,7 +184,7 @@ configuration {
 #sidebar {
     expand: false;
     orientation: vertical;
-    spacing: 10px;
+    spacing: 0px;
     border: 0px 0px 0px 0px;
 }
 #button {
@@ -196,7 +200,7 @@ configuration {
 }
 #button selected normal {
     color: @dark;
-    border: 2px 0px 2px 2px;
+    border: 2px 2px 2px 2px;
     background-color: @mylightgreen;
     border-color: @mygreen;
 }

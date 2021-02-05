@@ -11,4 +11,4 @@ rofi.hide-scrollbar: true
 rofi.line-margin: 0
 rofi.columns: 1
 rofi.font: sans-serif 12
-rofi.theme: ~/.config/rofi/arthur.rasi
+rofi.theme: ~/.config/rofi/luke.rasi
