@@ -9,7 +9,7 @@ cd dotfiles
 ./start.sh
 ```
 
-### Switch remote URLs from HTTPS to SSH
+### Switch remote URL git repository
 ```
 git remote set-url origin git@github.com:luca-ant/dotfiles.git
 ```
