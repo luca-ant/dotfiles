@@ -9,7 +9,7 @@ cd dotfiles
 ./start.sh
 ```
 
-## Change remote URL git
+### Change remote URL git
 ```
 git remote set-url origin git@github.com:luca-ant/dotfiles.git
 ```
