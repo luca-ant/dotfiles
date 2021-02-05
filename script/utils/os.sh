@@ -19,7 +19,7 @@ then
     DOTFILES_ROOT="/home/$USER/.dotfiles"
 fi
 
-run_command(){
+color_command(){
     $ECHO_RED
     $* | while read L; do
         $ECHO_GREEN
@@ -33,13 +33,13 @@ update_packets(){
 
     if [ $MANJARO ] || [ $ARCH ]
     then
-        run_command sudo pacman --noconfirm -Syu
+        color_command sudo pacman --noconfirm -Syu
     fi
 
     if [ $UBUNTU ] || [ $DEBIAN ]
     then
-        run_command sudo apt update
-        run_command sudo apt upgrade -y
+        color_command sudo apt update
+        color_command sudo apt upgrade -y
     fi
 }
 
@@ -47,12 +47,12 @@ install_packet(){
 
     if [ $MANJARO ] || [ $ARCH ]
     then
-        run_command sudo pacman --noconfirm -S $*
+        color_command sudo pacman --noconfirm -S $*
     fi
 
     if [ $UBUNTU ] || [ $DEBIAN ]
     then
-        run_command sudo apt install -y $*
+        color_command sudo apt install -y $*
     fi
 }
 
@@ -60,12 +60,12 @@ remove_packet(){
 
     if [ $MANJARO ] || [ $ARCH ]
     then
-        run_command sudo pacman --noconfirm -Rs $*
+        color_command sudo pacman --noconfirm -Rs $*
     fi
 
     if [ $UBUNTU ] || [ $DEBIAN ]
     then
-        run_command sudo apt purge -y $*
+        color_command sudo apt purge -y $*
     fi
 }
 
@@ -73,12 +73,12 @@ install_aur_packet(){
 
     if [ $MANJARO ] || [ $ARCH ]
     then
-        run_command yay --noconfirm -S $*
+        color_command yay --noconfirm -S $*
     fi
 
     if [ $UBUNTU ] || [ $DEBIAN ]
     then
-        run_command echo "AUR is not availabe" 2>&1
+        color_command echo "AUR is not availabe" 2>&1
     fi
 }
 
@@ -86,12 +86,12 @@ remove_aur_packet(){
 
     if [ $MANJARO ] || [ $ARCH ]
     then
-        run_command yay --noconfirm -R $*
+        color_command yay --noconfirm -R $*
     fi
 
     if [ $UBUNTU ] || [ $DEBIAN ]
     then
-        run_command echo "AUR is not availabe" 2>&1
+        color_command echo "AUR is not availabe" 2>&1
     fi
 }
 
@@ -99,7 +99,7 @@ install_snap_packet(){
 
     if [ $MANJARO ] || [ $ARCH ]
     then
-        run_command echo "SNAP is not availabe" 2>&1
+        color_command echo "SNAP is not availabe" 2>&1
     fi
 
     if [ $UBUNTU ] || [ $DEBIAN ]
@@ -112,7 +112,7 @@ remove_snap_packet(){
 
     if [ $MANJARO ] || [ $ARCH ]
     then
-        run_command echo "SNAP is not availabe" 2>&1
+        color_command echo "SNAP is not availabe" 2>&1
     fi
 
     if [ $UBUNTU ] || [ $DEBIAN ]

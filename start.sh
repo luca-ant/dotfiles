@@ -1,14 +1,16 @@
 #!/bin/bash
 
 WD=$(dirname "$(realpath "$0")")
+TASK_DIR="$WD/script"
 
-source "$WD/utils/check_user.sh"
-#source "$WD/utils/os.sh"
+source "$TASK_DIR/utils/check_user.sh"
+#source "$$TASK_DIR/utils/os.sh"
 
 LOGFILE="$WD/output.log"
 
 echo > "$LOGFILE"
 
-"$WD/tasks/upgrade_packets.sh" install 2>&1 | tee -a $LOGFILE
-"$WD/tasks/vim.sh" install 2>&1 | tee -a $LOGFILE
-"$WD/tasks/zsh.sh" install 2>&1 | tee -a $LOGFILE
+"$TASK_DIR/tasks/upgrade_packets.sh" install 2>&1 | tee -a $LOGFILE
+"$TASK_DIR/tasks/vim.sh" install 2>&1 | tee -a $LOGFILE
+"$TASK_DIR/tasks/zsh.sh" install 2>&1 | tee -a $LOGFILE
+

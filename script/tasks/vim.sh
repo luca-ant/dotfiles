@@ -9,6 +9,7 @@ ECHO_WHITE='echo -en \033[37m'
 
 WD=$(dirname $(realpath $0))
 WD=$(dirname "$WD")
+BD=$(dirname "$WD")
 
 source "$WD/utils/check_user.sh"
 source "$WD/utils/os.sh"
@@ -40,16 +41,16 @@ if [ $1 == "install" ]
 then
     install_packet wget vim
 
-    run_command rm -rf ~/.vim
-    run_command mkdir -p ~/.vim/autoload
-    run_command mkdir -p ~/.vim/bundle
-    run_command mkdir -p ~/.vim/undodir
+    color_command rm -rf ~/.vim
+    color_command mkdir -p ~/.vim/autoload
+    color_command mkdir -p ~/.vim/bundle
+    color_command mkdir -p ~/.vim/undodir
 
-    run_command wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -O ~/.vim/autoload/plug.vim
-    run_command wget https://tpo.pe/pathogen.vim -O ~/.vim/autoload/pathogen.vim
+    color_command wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -O ~/.vim/autoload/plug.vim
+    color_command wget https://tpo.pe/pathogen.vim -O ~/.vim/autoload/pathogen.vim
 
-    run_command ln -sf "$WD/home/vimrc" ~/.vimrc
-    run_command ln -sf "$WD/home/vim/ultisnips" ~/.vim/ultisnips
+    color_command ln -sf "$BD/home/vimrc" ~/.vimrc
+    color_command ln -sf "$BD/home/vim/ultisnips" ~/.vim/ultisnips
 
     echo | vim +PlugInstall +qa
 
@@ -59,8 +60,8 @@ then
 
     remove_packet vim
 
-    run_command rm -rf ~/.vim
-    run_command rm -rf ~/.vimrc
+    color_command rm -rf ~/.vim
+    color_command rm -rf ~/.vimrc
 
 else
     usage

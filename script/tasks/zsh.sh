@@ -9,6 +9,7 @@ ECHO_WHITE='echo -en \033[37m'
 
 WD=$(dirname $(realpath $0))
 WD=$(dirname "$WD")
+BD=$(dirname "$WD")
 
 source "$WD/utils/check_user.sh"
 source "$WD/utils/os.sh"
@@ -39,25 +40,25 @@ if [ $1 == "install" ]
 
 then
     install_packet zsh curl git
-    run_command rm -rf ~/.oh-my-zsh
+    color_command rm -rf ~/.oh-my-zsh
 
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh | grep -v 'exec zsh -l')"
 
-    run_command ln -sf "$WD/home/zshrc" ~/.zshrc
-    run_command ln -sf "$WD/home/zprofile" ~/.zprofile
+    color_command ln -sf "$BD/home/zshrc" ~/.zshrc
+    color_command ln -sf "$BD/home/zprofile" ~/.zprofile
 
-    run_command chsh -s /usr/bin/zsh
+    color_command chsh -s /usr/bin/zsh
 
 
 elif [ $1 == "remove" ]
 then
 
-    run_command chsh -s /bin/bash
+    color_command chsh -s /bin/bash
 
     remove_packet zsh
 
-    run_command rm -rf ~/.zshrc*
-    run_command rm -rf ~/.zprofile
+    color_command rm -rf ~/.zshrc*
+    color_command rm -rf ~/.zprofile
 
 else
     usage

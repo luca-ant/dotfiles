@@ -9,6 +9,7 @@ ECHO_WHITE='echo -en \033[37m'
 
 WD=$(dirname $(realpath $0))
 WD=$(dirname "$WD")
+BD=$(dirname "$WD")
 
 source "$WD/utils/check_user.sh"
 source "$WD/utils/os.sh"
@@ -44,7 +45,7 @@ then
 elif [ $1 == "remove" ]
 then
 
-    run_command echo "NOTHING TO DO!"
+    color_command echo "NOTHING TO DO!"
 
 else
     usage
