@@ -232,12 +232,11 @@ bindsym $mod+c exec $BROWSER
 #bindsym $mod+c exec chromium-browser
 
 # Screenshot
-#bindsym Print exec --no-startup-id i3-scrot
-bindsym Print exec --no-startup-id "$DOTFILES_ROOT/custom/print.sh -s"
-#bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Print exec --no-startup-id "$DOTFILES_ROOT/custom/print.sh -w"
-#bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-bindsym $mod+Shift+Print exec --no-startup-id "$DOTFILES_ROOT/custom/print.sh -a"
+bindsym Print exec --no-startup-id "$DOTFILES_ROOT/custom/screen.sh -f -s"
+bindsym $mod+Print exec --no-startup-id "$DOTFILES_ROOT/custom/screen.sh -f -w"
+bindsym $mod+Shift+Print exec --no-startup-id "$DOTFILES_ROOT/custom/screen.sh -c -f -a"
+bindsym $alt+Print exec --no-startup-id "$DOTFILES_ROOT/custom/screen.sh -c -s"
+bindsym $alt+Shift+Print exec --no-startup-id "$DOTFILES_ROOT/custom/screen.sh -c -w"
 
 # Autostart applications
 exec --no-startup-id nm-applet
