@@ -245,8 +245,8 @@ exec --no-startup-id udiskie --smart-tray
 exec --no-startup-id xautolock -time 10 -locker "$DOTFILES_ROOT/custom/lock_screen.sh || i3lock -c '#131313'"
 #exec --no-startup-id conky -c ~/.conkyrc
 exec --no-startup-id redshift -P -O 2500 -b 1.0
-exec --no-startup-id nitrogen --set-tiled ~/background.jpg
-#exec --no-startup-id "$DOTFILES_ROOT/custom/autostart.sh"
+#exec --no-startup-id nitrogen --set-tiled ~/background.jpg
+exec --no-startup-id feh --no-fehbg --bg-tile ~/background.jpg
 exec --no-startup-id "$DOTFILES_ROOT/custom/run_polybar.sh"
 exec --no-startup-id /usr/bin/dunst
 
