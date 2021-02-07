@@ -86,9 +86,7 @@ then
     echo "to file"
     echo "to clipboard"
     $SCREEN_CMD | $OUTPUT_CMD $OUTPUT_FILE | $CLIP_CMD > /dev/null
-    NOTIFY_MSG="Copied to clipboard"
-    notify-send "$NOTIFY_TITLE" "$NOTIFY_MSG" -u low
-    NOTIFY_MSG="Saved in $SCREENSHOT_DIR"
+    NOTIFY_MSG="Copied to clipboard\nSaved in $SCREENSHOT_DIR"
     notify-send "$NOTIFY_TITLE" "$NOTIFY_MSG" -u low
     exit 0
 fi
