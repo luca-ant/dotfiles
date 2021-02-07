@@ -3,12 +3,13 @@
 # Timings are on an Intel i7-2630QM @ 2.00GHz
 
 # Dependencies:
-# imagemagick
+# imagemagick (optional)
 # i3lock
-# scrot (optional but default)
+# maim
 
-IMAGE=/tmp/i3lock.png
-SCREENSHOT="scrot $IMAGE" # 0.46s
+IMAGE="/tmp/i3lock.png"
+IMAGE_BLUR="/tmp/i3lock_blur.png"
+SCREENSHOT="maim $IMAGE" # 0.46s
 
 # Alternate screenshot method with imagemagick. NOTE: it is much slower
 # SCREENSHOT="import -window root $IMAGE" # 1.35s
@@ -26,6 +27,16 @@ BLURTYPE="0x5" # 7.52s
 
 # Get the screenshot, add the blur and lock the screen with it
 $SCREENSHOT
-convert $IMAGE -blur $BLURTYPE $IMAGE
-i3lock -i $IMAGE
+
+convert "$IMAGE" -blur $BLURTYPE "$IMAGE_BLUR"
+
+if [ -f "$IMAGE_BLUR" ]
+then
+    i3lock -i $IMAGE_BLUR
+else
+    i3lock -c '#131313'
+fi
+
 rm $IMAGE
+rm $IMAGE_BLUR
+
