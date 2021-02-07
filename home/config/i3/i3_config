@@ -247,7 +247,7 @@ exec --no-startup-id redshift -P -O 2500 -b 1.0
 exec --no-startup-id nitrogen --set-tiled ~/background.jpg
 #exec --no-startup-id "$DOTFILES_ROOT/custom/autostart.sh"
 exec --no-startup-id "$DOTFILES_ROOT/custom/run_polybar.sh"
-exec --no-startup-id dunst
+exec --no-startup-id /usr/bin/dunst
 
 set $id_touchpad  $( xinput list | grep -i touchpad | awk -F "id=" {'print $2'} | cut -f1 )
 exec_always --no-startup-id xinput set-prop $id_touchpad "libinput Natural Scrolling Enabled" 1
