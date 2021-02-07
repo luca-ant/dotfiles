@@ -228,6 +228,7 @@ bindsym $mod+p exec --no-startup-id "$DOTFILES_ROOT/custom/lock_screen.sh || i3l
 
 bindsym $mod+n exec nemo
 bindsym $mod+c exec $BROWSER
+bindsym $mod+x exec $TERMINAL ranger
 #bindsym $mod+c exec google-chrome
 #bindsym $mod+c exec chromium-browser
 
