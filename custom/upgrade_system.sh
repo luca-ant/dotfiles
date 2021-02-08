@@ -8,14 +8,14 @@ ECHO_BLUE='echo -en \033[36m'
 ECHO_WHITE='echo -en \033[37m'
 ECHO_RESET='echo -en \033[m'
 
-BYE='Have a nice day! Bye 😉'
+BYE="${BOLD}Have a nice day! Bye ${NORMAL}😉"
 
 if [ $EUID == 0 ] ; then
     echo "${BOLD}You are root! Please, run me as normal user.${NORMAL}"
     exit 1
 fi
 
-FLAG_FILE="/tmp/.upgrade_check_done"
+FLAG_FILE="/tmp/.upgrade_done"
 
 if [ -f "$FLAG_FILE" ]
 then
@@ -23,7 +23,7 @@ then
 fi
 
 $ECHO_BLUE
-echo -en "\n🛠️ ${BOLD}Would you like to upgrade system?${NORMAL} [yN] "; read A ; if [ -z $A ] || [ $A != 'y' ] ; then  $ECHO_GREEN; echo "$BYE" ; $ECHO_RESET ; exit 0 ; fi
+echo -en "\n🛠️ ${BOLD}Would you like to upgrade system?${NORMAL} [y|N] "; read A ; if [ -z $A ] || [ $A != 'y' ] ; then  $ECHO_GREEN; echo "$BYE" ; $ECHO_RESET ; exit 0 ; fi
 $ECHO_RESET
 
 UBUNTU=$(grep -e "^NAME" /etc/os-release 2>/dev/null | grep -io Ubuntu | head -1)
