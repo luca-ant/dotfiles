@@ -23,7 +23,7 @@ then
 fi
 
 $ECHO_BLUE
-echo -n "🛠️ ${BOLD}Would you like to upgrade system?${NORMAL} [yN] "; read A ; if [ -z $A ] || [ $A != 'y' ] ; then  $ECHO_GREEN; echo "$BYE" ; $ECHO_RESET ; exit 0 ; fi
+echo -en "\n🛠️ ${BOLD}Would you like to upgrade system?${NORMAL} [yN] "; read A ; if [ -z $A ] || [ $A != 'y' ] ; then  $ECHO_GREEN; echo "$BYE" ; $ECHO_RESET ; exit 0 ; fi
 $ECHO_RESET
 
 UBUNTU=$(grep -e "^NAME" /etc/os-release 2>/dev/null | grep -io Ubuntu | head -1)
