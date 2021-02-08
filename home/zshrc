@@ -168,6 +168,9 @@ run() { setsid $* >/dev/null 2>&1 }
 weather() { curl -s "https://wttr.in/$*" }
 # weather() { curl -s "https://wttr.in/$*?n" }
 
+## REMIND UPDATE SYSTEM
+
+"$DOTFILES_ROOT/custom/upgrade_system.sh" 2>/dev/null
 
 # SSH AGENT
 eval `ssh-agent` >/dev/null 2>&1

@@ -6,6 +6,7 @@ ECHO_RED='echo -en \033[31m'
 ECHO_GREEN='echo -en \033[32m'
 ECHO_BLUE='echo -en \033[36m'
 ECHO_WHITE='echo -en \033[37m'
+ECHO_RESET='echo -en \033[m'
 
 WD=$(dirname $(realpath $0))
 WD=$(dirname "$WD")
@@ -67,6 +68,5 @@ fi
 
 $ECHO_BLUE
 echo "[+] RUNNING TASK $0... DONE!"
-$ECHO_WHITE
-
+$ECHO_RESET
 

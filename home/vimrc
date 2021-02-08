@@ -44,6 +44,7 @@ set list
 set listchars=tab:␉·,trail:␠,nbsp:⎵
 "set tabstop=4 shiftwidth=4
 set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabpagemax=50
 set spelllang=it,en_us
 set hlsearch                        "highlight search result
 set incsearch                       "search during typing
