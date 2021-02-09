@@ -34,13 +34,13 @@ ARCH=$(grep -e "^NAME" /etc/os-release 2>/dev/null | grep -io Arch | head -1)
 
 if [ $MANJARO ] || [ $ARCH ]
 then
-    sudo pacman -Syu
+    sudo pacman -Syu 2>&1
     touch "$FLAG_FILE"
 fi
 
 if [ $UBUNTU ] || [ $DEBIAN ]
 then
-    sudo apt update && sudo apt upgrade
+    sudo apt update 2>&1 && sudo apt upgrade 2>&1
     touch "$FLAG_FILE"
 fi
 
