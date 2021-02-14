@@ -130,8 +130,10 @@ source $ZSH/oh-my-zsh.sh
 #bindkey -v # enable vi-mode
 
 # Import vte.sh to open termite in the same directory
-source /etc/profile.d/vte.sh > /dev/null 2>&1
-
+if [ -f /etc/profile.d/vte.sh ]
+then
+    source /etc/profile.d/vte.sh > /dev/null 2>&1
+fi
 # MY ALIAS
 
 alias ll='ls -alFh'
@@ -170,7 +172,10 @@ weather() { curl -s "https://wttr.in/$*" }
 
 ## REMIND UPDATE SYSTEM
 
-"$DOTFILES_ROOT/custom/upgrade_system.sh" 2>/dev/null
+if [ -f "$DOTFILES_ROOT/custom/upgrade_system.sh" ]
+then
+    "$DOTFILES_ROOT/custom/upgrade_system.sh" 2>/dev/null
+fi
 
 # SSH AGENT
 eval `ssh-agent` >/dev/null 2>&1
