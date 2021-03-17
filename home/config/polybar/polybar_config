@@ -99,9 +99,9 @@ font-2 = "Noto Color Emoji:pixelsize=16:scale=10;2"
 ;font-2 = Weather Icons:size=14;1
 
 
-modules-left = wlan eth networkspeeddown networkspeedup filesystem
+modules-left = wlan eth vpn networkspeeddown networkspeedup filesystem
 modules-center = spotify
-modules-right = pulseaudio backlight-acpi
+modules-right = outputaudio pulseaudio backlight-acpi
 
 tray-position = right
 tray-padding = 2
@@ -633,13 +633,35 @@ format-underline = ${colors.purple}
 
 label = %date%
 
+
+
+[module/outputaudio]
+type = custom/script
+
+exec = "$DOTFILES_ROOT/custom/switch_audio_output.sh"
+exec-if = which pacmd
+tail = true
+
+;label = %output%
+label = %output:0:50:...%
+format-background = ${colors.background}
+format-foreground = ${colors.foreground}
+format-underline = ${colors.purple}
+format-prefix-foreground = ${colors.foreground-alt}
+
+click-left = "kill -USR1 $(cat /tmp/.outputaudio_pid)"
+click-middle = "kill -USR1 $(cat /tmp/.outputaudio_pid)"
+click-right = "kill -USR1 $(cat /tmp/.outputaudio_pid)"
+
+
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
 label-volume = %percentage:2%%
 ;format-volume-prefix = " "
-format-volume-prefix = "🎵 "
+#format-volume-prefix = "🎵 "
+format-volume-prefix = "🔉 "
 format-volume-prefix-foreground = ${colors.foreground-alt}
 label-muted-foreground = ${colors.foreground-alt}
 format-volume-underline = ${colors.purple}
@@ -818,6 +840,17 @@ format-connected-prefix = "⬆️ "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 format-connected-underline = ${colors.green}
 format-connected-foreground = ${colors.foreground}
+
+[module/vpn]
+type = custom/script
+exec = echo "vpn connected"
+exec-if = pgrep -x openvpn
+interval = 5
+format-underline = ${colors.red}
+format-prefix = "🕸️ "
+format-prefix-foreground = ${colors.foreground-alt}
+format-foreground = ${colors.foreground}
+
 
 [settings]
 screenchange-reload = true
