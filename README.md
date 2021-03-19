@@ -5,8 +5,8 @@ My dotfiles and basic configurations.
 
 <p float="left">
 
-  <img width=512 src="https://github.com/luca-ant/dotfiles/blob/master/images/desktop.png">
-  <img width=512 src="https://github.com/luca-ant/dotfiles/blob/master/images/terminal.png">
+  <img width=500 src="https://github.com/luca-ant/dotfiles/blob/master/images/desktop.png">
+  <img width=500 src="https://github.com/luca-ant/dotfiles/blob/master/images/terminal.png">
 </p>
 
 ## Restore dotfiles
