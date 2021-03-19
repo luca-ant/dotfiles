@@ -3,10 +3,9 @@ My dotfiles and basic configurations.
 
 ### How my desktop looks like 
 
-<p float="left">
-
-  <img width=500 src="https://github.com/luca-ant/dotfiles/blob/master/images/desktop.png">
-  <img width=500 src="https://github.com/luca-ant/dotfiles/blob/master/images/terminal.png">
+<p align="center">
+  <img width=1024 src="https://github.com/luca-ant/dotfiles/blob/master/images/desktop.png">
+  <img width=1024 src="https://github.com/luca-ant/dotfiles/blob/master/images/terminal.png">
 </p>
 
 ## Restore dotfiles
