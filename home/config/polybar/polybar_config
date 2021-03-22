@@ -843,10 +843,10 @@ format-connected-foreground = ${colors.foreground}
 
 [module/vpn]
 type = custom/script
-exec = echo "vpn connected"
+exec = echo "VPN"
 exec-if = pgrep -x openvpn
 interval = 5
-format-underline = ${colors.red}
+format-underline = ${colors.orange}
 format-prefix = "🕸️ "
 format-prefix-foreground = ${colors.foreground-alt}
 format-foreground = ${colors.foreground}
