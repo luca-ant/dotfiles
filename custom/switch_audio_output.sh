@@ -17,13 +17,13 @@ display_output_audio(){
 toggle() {
 
     CURRENT_OUTPUT_PORT=$(pacmd list-sinks | grep -e 'active port' | awk -F":" '{print $2}' | head -n1 | sed 's/>//g' | sed 's/<//g' | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
-
+    SINK_INDEX=$(pacmd list-sinks | grep index | awk -F':' '{print $2}' | head -n1)
     if [ $CURRENT_OUTPUT_PORT == "analog-output-speaker" ]
     then
-pacmd set-sink-port 0 analog-output-headphones
+pacmd set-sink-port $SINK_INDEX analog-output-headphones
     elif [ $CURRENT_OUTPUT_PORT == "analog-output-headphones" ]
     then
-pacmd set-sink-port 0 analog-output-speaker
+pacmd set-sink-port $SINK_INDEX analog-output-speaker
     fi
 
     kill -15 $(pgrep --oldest --parent $$) > /dev/null 2>&1
