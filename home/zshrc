@@ -147,7 +147,7 @@ alias pacman_autoremove='sudo pacman -R $(pacman -Qdtq)'
 alias vim='vim -p'
 alias vims='vim $(fzf --height 50% --reverse)'
 
-alias ip_pub="curl -s ifconfig.me"
+alias ip_pub="curl -s https://ipinfo.io/ip"
 
 # systemd
 alias sc=systemctl
