@@ -185,3 +185,4 @@ trap 'test -n "$SSH_AGENT_PID" && /usr/bin/ssh-agent -k >/dev/null 2>&1' 0
 export GEM_HOME="$(ruby -e 'puts Gem.user_dir')"
 export PATH="$PATH:$GEM_HOME/bin"
 
+
