@@ -11,8 +11,8 @@ My dotfiles and basic configurations.
 ## Restore dotfiles
 
 ```
-git clone https://github.com/luca-ant/dotfiles.git
-cd dotfiles
+git clone https://github.com/luca-ant/dotfiles.git .dotfiles
+cd .dotfiles
 ./start.sh
 ```
 
