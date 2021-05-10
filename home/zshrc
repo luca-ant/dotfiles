@@ -134,6 +134,7 @@ if [ -f /etc/profile.d/vte.sh ]
 then
     source /etc/profile.d/vte.sh > /dev/null 2>&1
 fi
+
 # MY ALIAS
 
 alias ll='ls -alFh'
