@@ -370,8 +370,8 @@ interval = 5
 ;format-prefix = "📻 "
 format-prefix = " "
 format = <label>
-;exec = python $DOTFILES_ROOT/custom/spotify_status.py -t 25 -f '{play_pause} {artist} - {song}'
-exec = python $DOTFILES_ROOT/custom/spotify_status.py -t 25 -f '{play_pause} {song} - {artist}'
+;exec = python3 $DOTFILES_ROOT/custom/spotify_status.py -t 25 -f '{play_pause} {artist} - {song}'
+exec = python3 $DOTFILES_ROOT/custom/spotify_status.py -t 25 -f '{play_pause} {song} - {artist}'
 #format-underline = ${colors.teal}
 format-underline = #1db954
 
