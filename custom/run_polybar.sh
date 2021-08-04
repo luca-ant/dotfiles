@@ -19,10 +19,10 @@ then
 fi
 
 # Terminate already running bar instances
-killall -q $COMMAND
+killall -q polybar
 
 # Wait until the processes have been shut down
-while pgrep -u $UID -x $COMMAND >/dev/null; do sleep 1; done
+while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 
 rm /tmp/.weather_pid >/dev/null 2>&1
 rm /tmp/.outputaudio_pid >/dev/null 2>&1
@@ -44,12 +44,12 @@ else
 
     for m in $(xrandr -q | grep " connected" | cut -d" " -f1); do
         if [ "$m" = "$PRIMARY" ] ; then
-            MONITOR=$m $COMMAND $CFG bottom >/dev/null 2>&1 &
-            MONITOR=$m $COMMAND $CFG top >/dev/null 2>&1 &
+            MONITOR=$m $COMMAND -c ~/.config/polybar/config bottom >/dev/null 2>&1 &
+            MONITOR=$m $COMMAND -c ~/.config/polybar/config top >/dev/null 2>&1 &
             echo
         else
-            MONITOR=$m $COMMAND $CFG bottom2 >/dev/null 2>&1 &
-#            MONITOR=$m $COMMAND $CFG top2 >/dev/null 2>&1 &
+            MONITOR=$m $COMMAND -c ~/.config/polybar/config bottom2 >/dev/null 2>&1 &
+#            MONITOR=$m $COMMAND -c ~/.config/polybar/config$CFG top2 >/dev/null 2>&1 &
             echo
         fi
     done
