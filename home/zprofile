@@ -6,7 +6,6 @@ export DOTFILES_ROOT="/home/$USER/.dotfiles"
 export PATH=$PATH":/snap/bin:/home/$USER/.local/bin"
 export PATH="$DOTFILES_ROOT/custom:"$PATH
 export PATH=".:"$PATH
-#export TERMINAL='termite'
 
 if which google-chrome-stable > /dev/null 2>&1
 then
@@ -43,6 +42,6 @@ fi
 #export WLAN_INTERFACE
 
 
-[[ -z $DISPLAY && $XDG_VTNR -eq 5 ]] && exec startx
-#[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+#[[ -z $DISPLAY && $XDG_VTNR -eq 5 ]] && exec startx
 #[[ -z $DISPLAY && $XDG_VTNR -le 3 ]] && exec startx
