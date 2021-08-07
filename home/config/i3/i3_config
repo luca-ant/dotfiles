@@ -250,6 +250,8 @@ exec --no-startup-id feh --no-fehbg --bg-fill ~/background.jpg
 exec --no-startup-id "$DOTFILES_ROOT/custom/run_polybar.sh"
 exec --no-startup-id /usr/bin/dunst
 
+exec --no-startup-id "~/.local/bin/autostart.sh"
+
 set $id_touchpad  $( xinput list | grep -i touchpad | awk -F "id=" {'print $2'} | cut -f1 )
 exec_always --no-startup-id xinput set-prop $id_touchpad "libinput Natural Scrolling Enabled" 1
 exec_always --no-startup-id xinput set-prop $id_touchpad "libinput Tapping Enabled" 1
