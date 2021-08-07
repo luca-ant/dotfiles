@@ -71,6 +71,8 @@ else
         $XRANDR_CMD="${XRANDR_CMD} --output ${MONITORS[$i]} --mode 1920x1080 --left-of ${ALL_MONITORS[$j]}"
     done
     $XRANDR_CMD
+    feh --no-fehbg --bg-fill ~/background.jpg
+    #    nitrogen --set-tiled ~/background.jpg
 fi
 
 
