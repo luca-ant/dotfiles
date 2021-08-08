@@ -67,6 +67,10 @@ EOL
 fi
 
 
+#xset s off
+#xset s noblank
+xset -dpms
+
 exec $WM_CMD
 #exec startxfce4
 
