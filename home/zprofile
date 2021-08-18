@@ -27,7 +27,10 @@ fi
 #if which termite > /dev/null 2>&1
 #then
 #    export TERMINAL=$(which termite)
-if which kitty > /dev/null 2>&1
+if which alacritty > /dev/null 2>&1
+then
+    export TERMINAL=$(which alacritty)
+elif which kitty > /dev/null 2>&1
 then
     export TERMINAL=$(which kitty)
 elif which xfce4-terminal > /dev/null 2>&1
