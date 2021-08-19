@@ -279,15 +279,15 @@ colors:
     white:   '#fdf6e3'
 
   # Bright colors
-  bright:
-    black:   '#000000'
-    red:     '#dc322f'
-    green:   '#98fb98'
-    yellow:  '#ffa500'
-    blue:    '#1e90ff'
-    magenta: '#9966ff'
-    cyan:    '#00cccc'
-    white:   '#fdf6e3'
+  #bright:
+  #  black:   '#000000'
+  #  red:     '#dc322f'
+  #  green:   '#98fb98'
+  #  yellow:  '#ffa500'
+  #  blue:    '#1e90ff'
+  #  magenta: '#9966ff'
+  #  cyan:    '#00cccc'
+  #  white:   '#fdf6e3'
 
   # Dim colors
   #
