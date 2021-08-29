@@ -33,9 +33,6 @@ fi
 if which polybar
 then
     WM_CMD="i3"
-elif which polybar-git
-then
-    WM_CMD="i3"
 else
 
     WM_CMD="i3 -c /tmp/i3_config"
