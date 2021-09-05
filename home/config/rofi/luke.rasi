@@ -2,19 +2,6 @@
  * User: Luke
  */
 
-configuration {
-
-    display-ssh:                   "  ";
-//    display-run:                    "";
-    display-run:                    "🔍";
-//    display-drun:                   "";
-    display-drun:                   "🎨";
-//    display-window:                 "";
-    display-window:                 "🎲";
-    display-combi:                  "";
-    show-icons: true;
-}
-
 
 * {
     foreground:  #dcdccc;
@@ -64,11 +51,10 @@ configuration {
     highlight:     underline bold #ffffff;
 
     transparent: rgba(0,0,0,0);
-//    font: "Source Code Pro 10";
     font: "Roboto Mono 12";
 }
 
-#window {
+window {
     location: center;
     anchor:   center;
     transparency: "screenshot";
@@ -83,13 +69,12 @@ configuration {
     orientation: horizontal;
 }
 
-#mainbox {
+mainbox {
     spacing: 0;
     children: [ inputbar, message, listview ];
 }
 
-#message {
-//    font: "Source Code Pro 8";
+message {
     font: "Roboto Mono 10";
     color: @black;
     border-color: @mygreen;
@@ -99,24 +84,25 @@ configuration {
     background-color: @mygreen;
 }
 
-#inputbar {
+inputbar {
     color: @mylightgreen;
     padding: 11px;
     background-color: @tlightblack;
     border: 2px 2px 2px 2px;
     border-radius:  15px 15px 0px 0px;
     border-color: @mygreen;
-//    font: "Source Code Pro 18";
     font: "Roboto Mono 12";
 }
-#entry,prompt,case-indicator {
+
+entry,prompt,case-indicator {
     text-font: inherit;
     text-color: inherit;
 }
-#prompt {
+prompt {
     margin: 0em 0.3em 0em 0em ;
 }
-#listview {
+
+listview {
     padding: 8px;
     border-radius: 0px 0px 15px 15px;
     border-color: @mygreen;
@@ -125,7 +111,7 @@ configuration {
     dynamic: false;
     lines: 10;
 }
-#element {
+element {
     padding: 3px;
     vertical-align: 0.5;
 //    border: 2px;
@@ -135,60 +121,61 @@ configuration {
     font: inherit;
 }
 
-#element selected.normal {
-    background-color: @mygreen;
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
 }
 
-#element selected active {
+element normal active {
+    foreground: @mygreen;
+}
+
+element normal urgent {
+    foreground: @lightred;
+}
+
+element selected active {
     background-color: @mygreen;
     foreground: @dark;
 }
 
-#element selected urgent {
+element selected urgent {
     background-color: @lightred;
     foreground: @dark;
 }
 
-#element normal normal {
+element selected.normal {
+    background-color: @mygreen;
+}
+
+element alternate normal {
 
 }
 
-#element normal active {
+element alternate active {
     foreground: @mygreen;
 }
 
-#element normal urgent {
+element alternate urgent {
     foreground: @lightred;
 }
 
-#element alternate normal {
-
-}
-
-#element alternate active {
-    foreground: @mygreen;
-}
-
-#element alternate urgent {
-    foreground: @lightred;
-}
-
-#vertb {
+vertb {
     expand: false;
     children: [ dummy0, sidebar, dummy1  ];
 }
-#dummy0,  dummy1 {
+
+dummy0,  dummy1 {
     expand: true;
 }
 
-#sidebar {
+sidebar {
     expand: false;
     orientation: vertical;
     spacing: 0px;
     border: 0px 0px 0px 0px;
 }
-#button {
-//    font: "FontAwesome 22";
+button {
     font: "Roboto Mono 18";
     padding: 8;
     border: 2px 0px 2px 2px;
@@ -198,9 +185,19 @@ configuration {
     color: @foreground;
     horizontal-align: 0.5;
 }
-#button selected normal {
+
+button selected normal {
     color: @dark;
     border: 2px 2px 2px 2px;
     background-color: @mylightgreen;
     border-color: @mygreen;
 }
+
+error-message {
+    expand: true;
+    background-color: @lightred;
+    border-color: @red;
+    border: 2px;
+    padding: 1em;
+}
+
