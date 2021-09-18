@@ -13,8 +13,9 @@ Plug 'flazz/vim-colorschemes'
 "Plug 'powerline/powerline'
 "Plug 'ryanoasis/vim-devicons'
 
+Plug 'SirVer/ultisnips'
+
 if executable('latex')
-    Plug 'SirVer/ultisnips'
     Plug 'lervag/vimtex'
 endif
 
