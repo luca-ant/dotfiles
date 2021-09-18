@@ -101,7 +101,8 @@ font-2 = "Noto Color Emoji:pixelsize=16:scale=10;2"
 
 modules-left = wlan eth vpn networkspeeddown networkspeedup filesystem
 modules-center = spotify
-modules-right = outputaudio pulseaudio backlight-acpi
+modules-right = pulseaudio backlight-acpi
+#modules-right = outputaudio pulseaudio backlight-acpi
 
 tray-position = right
 tray-padding = 2
