@@ -14,8 +14,12 @@ RASPBIAN=$(grep -e "^NAME" /etc/os-release 2>/dev/null | grep -io Raspbian | hea
 MANJARO=$(grep -e "^NAME" /etc/os-release 2>/dev/null | grep -io Manjaro | head -1)
 ARCH=$(grep -e "^NAME" /etc/os-release 2>/dev/null | grep -io Arch | head -1)
 
-DOTFILES_URL="https://github.com/luca-ant/dotfiles.git"
-#DOTFILES_URL="git@github.com:luca-ant/dotfiles.git"
+
+if [ -z "$DOTFILES_URL" ]
+then
+    DOTFILES_URL="https://github.com/luca-ant/dotfiles.git"
+    # DOTFILES_URL="git@github.com:luca-ant/dotfiles.git"
+fi
 
 if [ -z "$DOTFILES_ROOT" ]
 then

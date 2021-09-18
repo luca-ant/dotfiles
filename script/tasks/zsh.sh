@@ -12,19 +12,14 @@ WD=$(dirname $(realpath $0))
 WD=$(dirname "$WD")
 BD=$(dirname "$WD")
 
-source "$WD/utils/check_user.sh"
+source "$WD/utils/check.sh"
 source "$WD/utils/os.sh"
-#source "$WD/utils/check_args.sh"
+
+check_user
 
 $ECHO_BLUE
 echo "[-] RUNNING TASK $0..."
 $ECHO_WHITE
-
-usage(){
-    $ECHO_BLUE
-    echo "Usage: $0 [ install | remove ]"
-    $ECHO_WHITE
-}
 
 if [ $# != 1 ]
 then
