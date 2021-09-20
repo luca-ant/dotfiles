@@ -41,17 +41,17 @@ while getopts "fcswah" options; do
             CLIP_CMD="xclip -selection clipboard -t image/png -i"
             ;;
         s)
-            SCREEN_CMD="maim -B --quality $QUALITY"
+            SCREEN_CMD="maim --quality $QUALITY"
             OUTPUT_FILE="$SCREENSHOT_DIR/$(date +'%Y-%m-%d_%H-%M-%S')_screen.png"
             NOTIFY_TITLE="Screenshot done!"
             ;;
         w)
-            SCREEN_CMD="maim -B --quality $QUALITY -i $(xdotool getactivewindow)"
+            SCREEN_CMD="maim --quality $QUALITY -i $(xdotool getactivewindow)"
             OUTPUT_FILE="$SCREENSHOT_DIR/$(date +'%Y-%m-%d_%H-%M-%S')_window.png"
             NOTIFY_TITLE="Screenshot of active window done!"
             ;;
         a)
-            SCREEN_CMD="maim -B --quality $QUALITY -s -u"
+            SCREEN_CMD="maim --quality $QUALITY -s -u"
             OUTPUT_FILE="$SCREENSHOT_DIR/$(date +'%Y-%m-%d_%H-%M-%S')_selection.png"
             NOTIFY_TITLE="Screenshot of selection done!"
             ;;
