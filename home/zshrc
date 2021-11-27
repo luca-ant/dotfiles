@@ -150,6 +150,8 @@ alias vims='vim $(fzf --height 50% --reverse)'
 
 alias ip_pub="curl -s https://ipinfo.io/ip"
 
+alias size='du -d1 -h'
+
 # systemd
 alias sc=systemctl
 alias scu='systemctl --user'
