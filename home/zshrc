@@ -172,8 +172,8 @@ run() { setsid $* >/dev/null 2>&1 }
 weather() { curl -s "https://wttr.in/$*" }
 # weather() { curl -s "https://wttr.in/$*?n" }
 
-#rn() {N=$(echo "$1" | tr " \'*!@#$%^&*" "_" | sed -E -e "s/\[|\]|\(|\)/_/g" | tr -s "_") ;  mv "$1" "$N"}
-rn() {N=$(echo "$1" | tr " \'\":;\\|/*!@#$%^&*()[]{}" "_") ;  mv "$1" "$N"}
+#rn() {N=$(echo "$1" | tr " \'*!@#$%^&*," "_" | sed -E -e "s/\[|\]|\(|\)/_/g" | tr -s "_") ;  mv "$1" "$N"}
+rn() {N=$(echo "$1" | tr " \'\":;\\|/*!@#$%^&*,()[]{}" "_" | tr -s "_") ;  mv "$1" "$N"}
 
 ## REMIND UPDATE SYSTEM
 
