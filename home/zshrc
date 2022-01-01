@@ -140,8 +140,8 @@ fi
 
 ## MY ALIAS AND COMMANDS
 
-if [ -d "$MY_ZSH" ]; then
-    for F in "$MY_ZSH"/*; do
+if [ -d "$MY_SHELL" ]; then
+    for F in "$MY_SHELL"/*; do
         [ -x "$F" ] && source "$F"
     done
     unset F
