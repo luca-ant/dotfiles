@@ -3,7 +3,6 @@
 # I put here everything needed only for interactive usage
 
 
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -132,9 +131,9 @@ fi
 
 ## MY ALIAS
 
-#if [ -f "$MY_ZSH/alias.sh" ]
+#if [ -f "$MY_SHELL/alias.sh" ]
 #then
-#    source "$MY_ZSH/alias.sh" 2>/dev/null
+#    source "$MY_SHELL/alias.sh" 2>/dev/null
 #fi
 
 
@@ -142,7 +141,8 @@ fi
 
 if [ -d "$MY_SHELL" ]; then
     for F in "$MY_SHELL"/*; do
-        [ -x "$F" ] && source "$F"
+#        [ -x "$F" ] && source "$F"
+        source "$F"
     done
     unset F
 fi
