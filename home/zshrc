@@ -131,15 +131,15 @@ then
 fi
 
 ## MY ALIAS
-#
+
 #if [ -f "$MY_ZSH/alias.sh" ]
 #then
 #    source "$MY_ZSH/alias.sh" 2>/dev/null
 #fi
 
 
-# MY ALIAS AND COMMANDS
-#
+## MY ALIAS AND COMMANDS
+
 if [ -d "$MY_ZSH" ]; then
     for F in "$MY_ZSH"/*; do
         [ -x "$F" ] && source "$F"

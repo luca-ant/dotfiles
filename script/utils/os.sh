@@ -30,6 +30,11 @@ then
 #    DOTFILES_ROOT="$WD/dotfiles"
 fi
 
+if [ -z "$MY_SHELL" ]
+then
+    MY_SHELL="/home/$USER/.my_shell"
+fi
+
 color_command(){
     $ECHO_RED
     $* | while read L; do
