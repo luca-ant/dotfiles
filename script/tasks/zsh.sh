@@ -42,6 +42,8 @@ then
 
     color_command ln -sf "$BD/home/zshrc" ~/.zshrc
     color_command ln -sf "$BD/home/zprofile" ~/.zprofile
+    color_command ln -sf "$BD/home/zshenv" ~/.zshenv
+    color_command ln -sf "$BD/home/my_zsh" ~/.my_zsh
 
     color_command chsh -s /usr/bin/zsh
 
@@ -55,6 +57,8 @@ then
 
     color_command rm -rf ~/.zshrc*
     color_command rm -rf ~/.zprofile
+    color_command rm -rf ~/.zshenv
+    color_command rm -rf ~/.my_zsh
 
 else
     usage

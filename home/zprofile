@@ -1,11 +1,8 @@
-
-#[[ -f ~/.zshrc ]] && . ~/.zshrc
+# .zprofile
+# [Read at login]
+# It is for commands and variables which should be set once or which don't need to be updated frequently: is basically the same as .zlogin except that it's sourced before .zshrc while .zlogin is sourced after .zshrc
 
 export DOTFILES_ROOT="/home/$USER/.dotfiles"
-
-export PATH="/home/$USER/.local/bin:/snap/bin:"$PATH
-export PATH="$DOTFILES_ROOT/custom:"$PATH
-export PATH=".:"$PATH
 
 if [ -z $AUTOSTART_FILE ]
 then
@@ -24,15 +21,15 @@ then
 fi
 
 
-#if which termite > /dev/null 2>&1
-#then
-#    export TERMINAL=$(which termite)
 if which alacritty > /dev/null 2>&1
 then
     export TERMINAL=$(which alacritty)
 elif which kitty > /dev/null 2>&1
 then
     export TERMINAL=$(which kitty)
+elif which termite > /dev/null 2>&1
+then
+    export TERMINAL=$(which termite)
 elif which xfce4-terminal > /dev/null 2>&1
 then
     export TERMINAL=$(which xfce4-terminal)

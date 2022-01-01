@@ -25,17 +25,17 @@ weather() {
         return
     fi
     if [ $T -eq 0 ]; then
-        W=$(curl -s "https://wttr.in?format=$FORMAT" 2>/dev/null | grep -v "Unknown location")
+        W=$(curl -s "https://v2.wttr.in?format=$FORMAT" 2>/dev/null | grep -v "Unknown location")
 
         output "$W"
 
     elif [ $T -eq 1 ]; then
-        W=$(curl -s "https://wttr.in/San Lorenzo in Campo?format=$FORMAT" 2>/dev/null | grep -v "Unknown location")
+        W=$(curl -s "https://v2.wttr.in/San_Lorenzo_in_Campo?format=$FORMAT" 2>/dev/null | grep -v "Unknown location" | tr "_" " ")
 
         output "$W"
 
     else
-        W=$(curl -s "https://wttr.in/Bologna?format=$FORMAT" 2>/dev/null | grep -v "Unknown location")
+        W=$(curl -s "https://v2.wttr.in/Bologna?format=$FORMAT" 2>/dev/null | grep -v "Unknown location")
 
         output "$W"
     fi
