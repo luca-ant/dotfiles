@@ -9,8 +9,8 @@ export VISUAL='vim'
 #export LANG=it_IT.UTF-8
 export LANG=en_US.UTF-8
 
-export MY_SHELL="/home/$USER/.my_shell"
 export DOTFILES_ROOT="/home/$USER/.dotfiles"
+export MY_SHELL="/home/$USER/.my_shell"
 
 # PATH
 export PATH="/home/$USER/.local/bin:/snap/bin:"$PATH

@@ -1,6 +1,7 @@
 
 alias ll='ls -alFh'
 alias l='ls -lhF'
+alias lll='ls -lhFSr'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
