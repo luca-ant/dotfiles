@@ -11,7 +11,7 @@ alias pacman_autoremove='sudo pacman -R $(pacman -Qdtq)'
 alias vim='vim -p'
 alias vims='vim $(fzf --height 50% --reverse)'
 
-
+alias sw='telnet towel.blinkenlights.nl'
 
 
 # cmd
