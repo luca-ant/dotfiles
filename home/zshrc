@@ -19,7 +19,9 @@ ZSH_THEME="ys"
 #ZSH_THEME="fino-time"
 #ZSH_THEME="half-life"
 #ZSH_THEME="steeef"
-#ZSH_THEME="agnoster"
+
+#ZSH_THEME="robbyrussell"
+#ZSH_THEME="linuxonly"
 
 
 # Set list of themes to pick from when loading at random
