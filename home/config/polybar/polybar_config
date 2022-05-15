@@ -523,15 +523,15 @@ format-underline = ${colors.lavender}
 format-foreground = ${colors.foreground}
 
 bar-width = 5
-bar-indicator = 
+bar-indicator = " "
 bar-indicator-foreground = ${colors.foreground}
 bar-indicator-font = 3
-bar-fill = █
-;bar-fill = |
+;bar-fill = █
+bar-fill = "#"
 bar-fill-font = 3
 bar-fill-foreground = ${colors.lavender}
-bar-empty = ▒
-;bar-empty = 
+;bar-empty = ▒
+bar-empty = " "
 bar-empty-font = 3
 bar-empty-foreground = ${colors.lavender}
 
@@ -674,15 +674,15 @@ format-muted-underline = ${self.format-volume-underline}
 label-muted = muted
 
 bar-volume-width = 5
-bar-volume-indicator =
+bar-volume-indicator = ""
 bar-volume-indicator-foreground = ${colors.foreground-alt}
 bar-volume-indicator-font = 3
-bar-volume-fill = █
-;bar-volume-fill = |
+;bar-volume-fill = █
+bar-volume-fill = "#"
 bar-volume-fill-font = 3
 bar-volume-fill-foreground = ${colors.purple}
-bar-volume-empty = ▒
-;bar-volume-empty = 
+;bar-volume-empty = ▒
+bar-volume-empty = " "
 bar-volume-empty-font = 3
 bar-volume-empty-foreground = ${colors.purple}
 
