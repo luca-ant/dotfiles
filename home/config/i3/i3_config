@@ -30,6 +30,8 @@ new_window pixel 2
 new_float normal 0
 #default_floating_border normal
 
+for_window [class="^.*"] border pixel 2
+
 # hide borders
 hide_edge_borders none
 
