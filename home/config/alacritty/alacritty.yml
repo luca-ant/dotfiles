@@ -225,7 +225,7 @@ colors:
       foreground: '#fdf6e3'
       background: '#ffa500'
 
-    bar:
+    footer_bar:
       background: '#1e90ff'
       foreground: '#fdf6e3'
 
@@ -257,7 +257,8 @@ colors:
   #  foreground: None
   #  background: None
 
-  # Selection colors
+  # Selectio n   colors
+  #
   #
   # Colors which should be used to draw the selection area.
   #
