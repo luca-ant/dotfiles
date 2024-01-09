@@ -46,6 +46,7 @@ ARCH=$(grep -e "^NAME" /etc/os-release 2>/dev/null | grep -io Arch | head -1)
 
 if [ $MANJARO ] || [ $ARCH ]
 then
+    sudo pacman -Sy archlinux-keyring
     sudo pacman -Syu 2>&1
     touch "$FLAG_FILE"
 fi

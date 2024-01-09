@@ -136,6 +136,8 @@ bindsym $mod+Shift+0 move container to workspace 10
 # move focused container to output
 bindsym $alt+Shift+Right move workspace to output right
 bindsym $alt+Shift+Left move workspace to output left
+bindsym $alt+Shift+Up move workspace to output up
+bindsym $alt+Shift+Down move workspace to output down
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
