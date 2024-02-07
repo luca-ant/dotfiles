@@ -230,8 +230,6 @@ bindsym $mod+u exec --no-startup-id "setxkbmap us -option caps:escape ; notify-s
 bindsym $mod+p exec --no-startup-id "$DOTFILES_ROOT/custom/lock_screen.sh || i3lock -c '#131313'"
 #bindsym $alt+l exec --no-startup-id "$DOTFILES_ROOT/custom/lock_screen.sh || i3lock -c '#131313'"
 
-bindsym $mod+m exec cmatrix -sa
-
 bindsym $mod+n exec nemo
 bindsym $mod+c exec $BROWSER
 bindsym $mod+x exec $TERMINAL code

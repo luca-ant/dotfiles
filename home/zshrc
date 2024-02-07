@@ -161,22 +161,13 @@ eval `ssh-agent` >/dev/null 2>&1
 trap 'test -n "$SSH_AGENT_PID" && /usr/bin/ssh-agent -k >/dev/null 2>&1' 0
 
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/luca/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/luca/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/luca/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/luca/miniconda3/bin:$PATH"
-    fi
+ROS_SETUP="/opt/ros/melodic/setup.zsh"
+if [ -f "$ROS_SETUP" ]; then
+source "$ROS_SETUP"
 fi
-unset __conda_setup
+#ROS_WS="/home/luca/ros_ws/devel/setup.zsh"
+#if [ -f "$ROS_WS" ]; then
+#source "$ROS_WS"
+#fi
 
-## Conda's base environment not be activated on startup
-# conda config --set auto_activate_base false
-
-# <<< conda initialize <<<
 
