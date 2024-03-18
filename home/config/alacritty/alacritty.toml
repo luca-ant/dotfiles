@@ -46,7 +46,7 @@ blinking = "On"
 shape = "Block"
 
 [font]
-size = 9.0
+size = 11.0
 
 [font.normal]
 family = "monospace"
