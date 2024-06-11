@@ -6,6 +6,8 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
+alias catj='jq --color-output . '
+
 alias pacman_autoremove='sudo pacman -R $(pacman -Qdtq)'
 
 alias vim='vim -p'
