@@ -12,7 +12,7 @@ alias pacman_autoremove='sudo pacman -R $(pacman -Qdtq)'
 
 alias vim='vim -p'
 alias vims='vim $(fzf --height 50% --reverse)'
-alias feh='feh -F --draw-exif'
+alias feh='feh --scale-down --draw-exif --draw-filename --draw-tinted'
 
 alias sw='telnet towel.blinkenlights.nl'
 
