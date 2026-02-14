@@ -1,4 +1,3 @@
-
 alias ll='ls -alFh'
 alias l='ls -lhF'
 alias lll='ls -lhFSr'
@@ -28,7 +27,7 @@ alias rn_all='rn_all_fn() {for FL in * ; do if [ -f "$FL" ] ; then rn "$FL" ; fi
 
 alias ip_pub="curl -s https://ipinfo.io/ip"
 alias weather='weather_fn(){echo "$*" | tr " " "_" | xargs -I{} curl -s "https://v2.wttr.in/{}" }; weather_fn'
-alias speedtest='curl -s https://raw.githubusercontent.com/PeterLinuxOSS/speedtest-cli/master/speedtest.py | python3 -'
+alias speedtest='python3 ~/.dotfiles/custom/speedtest.py'
 
 # systemd
 alias sc='systemctl'
